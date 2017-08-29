@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Display Login view
+Route::get('/', "EmployeeControler@Login");
 
 { /* Region Test Routes */
 
