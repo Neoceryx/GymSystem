@@ -11,6 +11,14 @@ class EmployeeControler extends Controller
 {
     //
 
+    public function Login($value='')
+    {
+      return view("Login");
+    }
+    // End function
+
+
+
     public function GetEmployees()
     {
 
