@@ -45,6 +45,6 @@ Route::get('/', function () {
   });
 
   // Display DataBase Info
-  Route::get("Employees", "Employees@GetEmployees");
+  Route::get("Employees", "EmployeeControler@GetEmployees");
 
 } /* End Region */
