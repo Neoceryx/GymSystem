@@ -4,11 +4,10 @@ namespace GymSys\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-// DataBases Library
+// Allows use DataBases
 use DB;
 
-
-class Employees extends Controller
+class EmployeeControler extends Controller
 {
     //
 
@@ -25,6 +24,7 @@ class Employees extends Controller
         echo $_Employee->Name. " :: ". $_Employee->FstName." :: ". $_Employee->LstName. " :: ".$_Employee->Address." :: ".$_Employee->Phone;
 
       }
+      // End Foreach
 
     }
     // End function
