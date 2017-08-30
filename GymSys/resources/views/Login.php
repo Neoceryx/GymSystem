@@ -18,6 +18,22 @@
 
     <h3 class="center-align">Login </h3>
 
+    <!-- Start Card Container -->
+    <div class="row">
+
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+
+            <span class="card-title">Login</span>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- End Card Container -->
+
   </body>
 
 </html>
