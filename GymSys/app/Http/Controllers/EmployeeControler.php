@@ -23,7 +23,10 @@ class EmployeeControler extends Controller
       // Get Employee Number From ajax call
       $EmpNumbr=$_POST['EMPNMBR'];
 
-      return $EmpNumbr;
+      // Get Employee Pass from ajax call
+      $EmpPass=$_POST['PASS'];
+
+      return $EmpNumbr. " :: ".$EmpPass;
 
     }
 
