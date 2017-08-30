@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+  // Get App token
+  let TOKEN=$("meta[name='csrf-token']").attr('content');
+
   $("#js_BtnLgn").click(function () {
 
     // Get Employee Number
@@ -10,9 +13,14 @@ $(document).ready(function () {
 
     // Start ajax
     $.ajax({
-      type:"GET",
+      type:"POST",
       url:"/LoginEmp",
       data:{EMPNMBR:EmpNmbr, PASS:EmpPass},
+      beforeSend: function (request) {
+
+        return request.setRequestHeader('X-CSRF-Token', TOKEN);
+
+      },
       success:function (data) {
 
         // Display Backend result in the dom element
@@ -20,7 +28,9 @@ $(document).ready(function () {
 
       },
       error:function (e) {
+
         alert("An error ocurred");
+        
       }
 
     });

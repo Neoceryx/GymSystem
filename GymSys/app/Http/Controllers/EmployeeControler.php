@@ -21,7 +21,7 @@ class EmployeeControler extends Controller
     {
 
       // Get Employee Number From ajax call
-      $EmpNumbr=$_GET['EMPNMBR'];
+      $EmpNumbr=$_POST['EMPNMBR'];
 
       return $EmpNumbr;
 

@@ -19,7 +19,7 @@
 Route::get('/', "EmployeeControler@LoginView");
 
 // Login Method
-Route::get("LoginEmp", "EmployeeControler@LoginEmployee");
+Route::post("LoginEmp", "EmployeeControler@LoginEmployee");
 
 { /* Region Test Routes */
 
