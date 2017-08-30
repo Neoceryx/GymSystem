@@ -16,20 +16,56 @@
   </head>
   <body>
 
-    <h3 class="center-align">Login </h3>
+
 
     <!-- Start Card Container -->
     <div class="row">
 
-      <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
+      <!-- Add white space to the left -->
+      <div class="col s12 m4"></div>
 
-            <span class="card-title">Login</span>
+      <!-- Star Card size -->
+      <div class="col s12 m4" style="padding-top:3%">
+        <div class="card white hoverable">
+          <div class="card-content blue-text">
+
+            <span class="card-title blue-text center-align">Login</span>
+
+            <!-- Start form login -->
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+
+                  <div class="input-field col s12">
+                    <input id="js_EmpNumbr" type="text" name="" value="">
+                    <label for="js_EmpNumbr">Employee Number</label>
+                  </div>
+
+                  <div class="input-field col s12">
+                    <input id="js_Pass" type="password" name="" value="">
+                    <label for="js_Pass">Password</label>
+                  </div>
+
+                  <div class="input-filed col s12 center-align">
+                    <button class="btn waves-effect waves-light" type="button" name="button">
+                      <i class="material-icons left">&#xE0DA;</i>
+                      Login
+                    </button>
+                  </div>
+
+                  <div class="input-field col s12 center-align">
+                    <a href="#">Forget Password</a>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+            <!-- End form login -->
 
           </div>
         </div>
       </div>
+      <!-- End Card size -->
 
     </div>
     <!-- End Card Container -->
