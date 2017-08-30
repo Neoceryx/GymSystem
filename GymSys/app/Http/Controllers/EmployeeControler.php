@@ -11,11 +11,21 @@ class EmployeeControler extends Controller
 {
     //
 
-    public function Login($value='')
+    public function LoginView($value='')
     {
       return view("Login");
     }
     // End function
+
+    public function LoginEmployee()
+    {
+
+      // Get Employee Number From ajax call
+      $EmpNumbr=$_GET['EMPNMBR'];
+
+      return $EmpNumbr;
+
+    }
 
 
 
