@@ -16,7 +16,10 @@
 // });
 
 // Display Login view
-Route::get('/', "EmployeeControler@Login");
+Route::get('/', "EmployeeControler@LoginView");
+
+// Login Method
+Route::get("LoginEmp", "EmployeeControler@LoginEmployee");
 
 { /* Region Test Routes */
 
