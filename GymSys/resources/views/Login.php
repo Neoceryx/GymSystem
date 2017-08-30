@@ -47,7 +47,7 @@
                   </div>
 
                   <div class="input-filed col s12 center-align">
-                    <button class="btn waves-effect waves-light" type="button" name="button">
+                    <button id="js_BtnLgn" class="btn waves-effect waves-light" type="button" name="button">
                       <i class="material-icons left">&#xE0DA;</i>
                       Login
                     </button>
@@ -61,6 +61,9 @@
               </form>
             </div>
             <!-- End form login -->
+
+            <!-- Display Backend Result Data  -->
+            <div class="result"></div>
 
           </div>
         </div>
@@ -77,3 +80,6 @@
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="materialize\js\materialize.min.js"></script>
+
+<!-- Aditional Js -->
+<script type="text/javascript" src="Login\Login.js"></script>
