@@ -26,9 +26,28 @@ class EmployeeControler extends Controller
       // Get Employee Pass from ajax call
       $EmpPass=$_POST['PASS'];
 
-      return $EmpNumbr. " :: ".$EmpPass;
+      echo $EmpNumbr. " :: ".$EmpPass;
+
+      { /* Region Get Employee by EmpNumber */
+
+        // Buil the query
+        $Employees = DB::table('employees')
+        ->select('Name', 'FstName', 'LstName', 'EmpRoles_Id')
+        ->where('Id', '=', $EmpNumbr)
+        ->get();
+
+        // Iterate over DataBase Table. Create an object from Employees dataBase table
+        foreach ($Employees as $_Employee) {
+
+          // Display Table info. Acces to the Fields database table
+          echo $_Employee->Name. " :: ". $_Employee->FstName." :: ". $_Employee->LstName." :: ".$_Employee->EmpRoles_Id;
+
+        }
+
+      } /* End Region */
 
     }
+    // End function
 
 
 
