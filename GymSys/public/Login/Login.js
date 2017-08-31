@@ -30,7 +30,8 @@ $(document).ready(function () {
       error:function (e) {
 
         alert("An error ocurred");
-        
+        console.log(e);
+        $(".result").html(e.responseText);
       }
 
     });
