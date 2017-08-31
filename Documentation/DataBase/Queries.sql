@@ -22,3 +22,13 @@ select timestampdiff( Year, '2017-08-27' , curdate() );
 
 -- Add one quantity to a date (DAY/MONTH/YEAR) 
 SELECT DATE_ADD("2017-06-15", INTERVAL 1 YEAR);
+
+-- Add New Employee Roles
+INSERT INTO EmpRoles (Description) values ('Admin'),('Normal');
+select * from EmpRoles;
+
+-- Add new Employee
+INSERT INTO Employees (FstName, LstName, Address, Phone, EmpPhotoPath, EmpRoles_Id)
+VALUES('Daniel', 'Fierro', 'Calle de las minas Fracc Villa del sol', 6645621957, '', 1);
+
+select * from employees;
