@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 // Allows use DataBases
 use DB;
 
+use Auth;
+
 class EmployeeControler extends Controller
 {
     //
@@ -26,7 +28,22 @@ class EmployeeControler extends Controller
       // Get Employee Pass from ajax call
       $EmpPass=$_POST['PASS'];
 
-      echo $EmpNumbr. " :: ".$EmpPass;
+      // echo $EmpNumbr. " :: ".$EmpPass;
+
+      { /* Region Create Session */
+
+        $value = session()->get('key', 'default');
+        echo $value;
+
+      } /* End Session */
+
+      // Validate if the user is not Loged
+      if (Auth::check()) {
+
+        Redirect::to("Test");
+        echo $EmpNumbr. " :: ".$EmpPass;
+
+      }
 
       { /* Region Get Employee by EmpNumber */
 
@@ -43,6 +60,7 @@ class EmployeeControler extends Controller
           echo $_Employee->Name. " :: ". $_Employee->FstName." :: ". $_Employee->LstName." :: ".$_Employee->EmpRoles_Id;
 
         }
+        // End Foreach
 
       } /* End Region */
 
