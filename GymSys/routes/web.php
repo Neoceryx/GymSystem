@@ -18,6 +18,9 @@
 // Display Login view
 Route::get('/', "EmployeeControler@Login");
 
+//Route::get('users', "UsersController@users");
+Route::get('user', ['as' => 'users' , 'uses' => 'UsersController@users']);
+
 { /* Region Test Routes */
 
   Route::get("Test",function ($value='') {
