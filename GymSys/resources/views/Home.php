@@ -13,12 +13,17 @@
 
     <?php
 
-    if (Auth::check() ) {
+    // Validate session variable
+    if (session()->has('key')) {
 
-      echo "User IsLogin";
+      // Get Session varible
+      echo session()->get('key');
 
     }else {
-      echo "User Is not Login";
+
+      // redirect user to the login form
+      echo redirect('/');
+
     }
 
     ?>

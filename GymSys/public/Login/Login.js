@@ -26,6 +26,17 @@ $(document).ready(function () {
         // Display Backend result in the dom element
         $(".result").html(data);
 
+        var UsrExist=parseInt($(".result").text());
+        console.log(UsrExist);
+
+        // Validate if the user is register
+        if (UsrExist == 1 ) {
+
+          // similar behavior as clicking on a link
+          window.location.href = "/Home";
+
+        }
+
       },
       error:function (e) {
 
