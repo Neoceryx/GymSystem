@@ -28,8 +28,8 @@ INSERT INTO EmpRoles (Description) values ('Admin'),('Normal');
 select * from EmpRoles;
 
 -- Add new Employee
-INSERT INTO Employees (Name,FstName, LstName, Address, Phone, EmpPhotoPath, EmpRoles_Id)
-VALUES('Daniel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 6645621957, '', 1);
+INSERT INTO Employees (Name,FstName, LstName, Address, Email, password, Phone ,EmpPhotoPath, EmpRoles_Id)
+VALUES('Daniel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 'd@gmail.com', 'pas' ,6645621957, '', 1);
 
 select * from employees;
 

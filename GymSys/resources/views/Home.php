@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+        <meta name="csrf-token" content="<?php echo csrf_token() ?>">
   </head>
   <body>
 
@@ -18,6 +19,7 @@
 
       // Get Session varible
       echo session()->get('key');
+      echo "<button type='button' id='js_LogOut' name='button'>Log out</button>";
 
     }else {
 
@@ -25,14 +27,19 @@
       echo redirect('/');
 
     }
-
     ?>
+
         <div class="">
 
       <label for="js_Name">Name:</label>
       <input id="js_Name" type="text" name="" value="">
       <br>
       <button id="js_Send" type="button" name="button">Send</button>
+
+      <!-- Display Backend Result -->
+      <div class="result"></div>
+
+
 
     </div>
 

@@ -25,6 +25,7 @@ class EmployeeControler extends Controller
 
       // Region Variables
       $EmpName=" ";
+      $EmpRoleId="";
 
       // Get Employee Number From ajax call
       $EmpNumbr=$_POST['EMPNMBR'];
@@ -46,7 +47,9 @@ class EmployeeControler extends Controller
         // Iterate over DataBase Table. Create an object from Employees dataBase table
         foreach ($Employees as $_Employee) {
 
+          // Storage the Employe  Info int the veriables
           $EmpName=$_Employee->Name;
+          $EmpRoleId=$_Employee->EmpRoles_Id;
 
           // Display Table info. Acces to the Fields database table
           // echo $EmpName. " :: ". $_Employee->FstName." :: ". $_Employee->LstName." :: ".$_Employee->EmpRoles_Id;
@@ -54,35 +57,46 @@ class EmployeeControler extends Controller
         }
         // End Foreach
 
+      } /* End Region */
+
+      { /* Region Log User */
+
         if ($EmpName==" ") {
 
-          session()->flush();
+          echo "0";
 
         }else {
 
-            // Specifying a default value...
-            $value = session('key', 'default');
+          // Specifying a default value...
+          $value = session('key');
 
-            // Store a piece of data in the session...
-            session(['key' => $EmpName]);
+          // Store a piece of data in the session...
+          session(['key' => $EmpName]);
 
-            // Validate session variable
-            if (session()->has('key')) {
+          // Validate session variable
+          if (session()->has('key')) {
 
-              // redirect user to the view
-              echo "1";
-            }
+            // redirect user to the view
+            echo "1";
+
+          }
 
         }
-
-
 
       } /* End Region */
 
     }
     // End function
 
+    public function LogOut($value='')
+    {
 
+      // Destroy the Session
+      session()->flush();
+
+      echo "LogOut";
+    }
+    //End function
 
     public function GetEmployees()
     {

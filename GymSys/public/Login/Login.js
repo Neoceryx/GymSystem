@@ -6,7 +6,7 @@ $(document).ready(function () {
   $("#js_BtnLgn").click(function () {
 
     // Get Employee Number
-    var EmpNmbr=$("#js_EmpNumbr").val();
+    var EmpNmbr=parseInt($("#js_EmpNumbr").val());
 
     // Get Employee Password
     var EmpPass=$("#js_Pass").val();
@@ -32,9 +32,11 @@ $(document).ready(function () {
         // Validate if the user is register
         if (UsrExist == 1 ) {
 
-          // similar behavior as clicking on a link
+          // Redirect User to the Home view
           window.location.href = "/Home";
 
+        }else {
+          alert("User is not valid. Please Verify your User id and PassWord");
         }
 
       },
@@ -43,6 +45,7 @@ $(document).ready(function () {
         alert("An error ocurred");
         console.log(e);
         $(".result").html(e.responseText);
+
       }
 
     });

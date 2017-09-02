@@ -21,12 +21,14 @@ Route::get('/', "EmployeeControler@LoginView");
 // Login Method
 Route::post("LoginEmp", "EmployeeControler@LoginEmployee");
 
+//Logout
+Route::post("LogOut","EmployeeControler@LogOut");
+
 Route::get("t",function ()
 {
   // Rediret user to login form
   return redirect('/');
 });
-
 
 { /* Region Test Routes */
 
@@ -36,8 +38,8 @@ Route::get("t",function ()
 
   Route::get("Home",function ($value='') {
 
-    // Loads the Home view
-    return view("Home");
+  // Loads the Home view
+  return view("Home");
 
   });
 
