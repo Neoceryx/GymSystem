@@ -11,7 +11,18 @@
     <!-- Redirect User to the Test Route -->
     <a href="/Test">Test Link</a>
 
-    <div class="">
+    <?php
+
+    if (Auth::check() ) {
+
+      echo "User IsLogin";
+
+    }else {
+      echo "User Is not Login";
+    }
+
+    ?>
+        <div class="">
 
       <label for="js_Name">Name:</label>
       <input id="js_Name" type="text" name="" value="">

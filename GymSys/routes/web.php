@@ -21,6 +21,13 @@ Route::get('/', "EmployeeControler@LoginView");
 // Login Method
 Route::post("LoginEmp", "EmployeeControler@LoginEmployee");
 
+Route::get("t",function ()
+{
+  // Rediret user to login form
+  return redirect('/');
+});
+
+
 { /* Region Test Routes */
 
   Route::get("Test",function ($value='') {

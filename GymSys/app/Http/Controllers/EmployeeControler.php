@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 // Allows use DataBases
 use DB;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
+
 
 class EmployeeControler extends Controller
 {
@@ -29,21 +30,24 @@ class EmployeeControler extends Controller
       $EmpPass=$_POST['PASS'];
 
       // echo $EmpNumbr. " :: ".$EmpPass;
+      $Credentials=["Id"=>$EmpNumbr, "password"=>$EmpPass];
+
+      // Validate Auth User
+      if (Auth::attempt($Credentials)) {
+        echo "Login";
+      }else {
+        echo "Login Fail";
+      }
+
+
 
       { /* Region Create Session */
 
-        $value = session()->get('key', 'default');
-        echo $value;
+        // $value = session()->get('key', 'valor');
+        // echo $value;
 
       } /* End Session */
 
-      // Validate if the user is not Loged
-      if (Auth::check()) {
-
-        Redirect::to("Test");
-        echo $EmpNumbr. " :: ".$EmpPass;
-
-      }
 
       { /* Region Get Employee by EmpNumber */
 
