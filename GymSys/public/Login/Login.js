@@ -26,18 +26,38 @@ $(document).ready(function () {
         // Display Backend result in the dom element
         $(".result").html(data);
 
-        var UsrExist=parseInt($(".result").text());
-        console.log(UsrExist);
+        // Get User
+        var LoginString=$(".result").text().split("::");
+
+        // Get Descision val
+        var UsrExist = parseInt( LoginString[0] );
+
+        // Get Employee Type from the loginstring
+        var EmpType= parseInt( LoginString[1] );
 
         // Validate if the user is register
-        if (UsrExist == 1 ) {
+        if (UsrExist == 0 ) {
 
           // Redirect User to the Home view
-          window.location.href = "/Home";
+          alert("User is not Registered");
 
         }else {
-          alert("User is not valid. Please Verify your User id and PassWord");
+
+          if ( UsrExist==1 && EmpType == 1  ) {
+
+            //  Redirect User to Admin Layout
+            window.location.href = "/Admin";
+
+          }
+          if ( UsrExist == 1 && EmpType == 2 ) {
+
+            // Redirect User to the Normal Employee
+            window.location.href = "/Employee";
+
+          }
+
         }
+        // End User Validation
 
       },
       error:function (e) {
