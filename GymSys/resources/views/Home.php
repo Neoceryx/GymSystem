@@ -15,10 +15,11 @@
     <?php
 
     // Validate session variable
-    if (session()->has('key')) {
+    if ( session()->has('Name') && session()->has('Role') ) {
 
       // Get Session varible
-      echo session()->get('key');
+      echo session()->get('Name');
+      echo session()->get('Role');
       echo "<button type='button' id='js_LogOut' name='button'>Log out</button>";
 
     }else {
