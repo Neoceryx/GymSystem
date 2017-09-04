@@ -130,8 +130,15 @@
                       </div>
                     </div>
 
-                    	<input type="file" id="fiad"><br><br>
-                      <img src="" width="200" style="display:none;" />
+                    <input id="sortpicture" type="file" name="sortpic" />
+
+
+                    	<!-- <input type="file" id="fiad"><br><br>
+                      <img src="" width="200" style="display:none;" /> -->
+
+                      <div class="res">
+
+                      </div>
 
 
                   </div>
