@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Auth;
 
 class EmployeeControler extends Controller
 {
-    //
 
-    public function LoginView($value='')
+
+    public function LoginView()
     {
       return view("Login");
     }
@@ -86,13 +86,12 @@ class EmployeeControler extends Controller
     }
     // End function
 
-    public function LogOut($value='')
+    public function LogOut()
     {
 
       // Destroy the Session
       session()->flush();
 
-      echo "LogOut";
     }
     //End function
 
@@ -112,6 +111,61 @@ class EmployeeControler extends Controller
       return view("EmployeesViews.Dashboard");
 
     }
+    // End function
+
+    public function AddMember()
+    {
+
+      // Get Member name from ajax call
+      $Name=$_POST['MBRNAE'];
+
+      // Specify path member folder and name
+      $MBRFOLDER="Pictures/Members/".$Name."";
+
+      // Store the folder path into the session variable
+      session()->put('MemberFolderPath', $MBRFOLDER);
+
+      { /* Region Upload Picture member */
+
+        // Validate if member folder exist
+        if (!file_exists($MBRFOLDER)) {
+
+          // Create Member folder
+          mkdir($MBRFOLDER, 0700);
+
+        }
+        // End validation
+
+      } /* End region */
+
+    }
+    // End function
+
+    public function UploadPicture()
+    {
+
+      // Get the member folder path
+      $MbrPath=session()->get('MemberFolderPath');
+
+      // Validate if the img has errors
+      if ( 0 < $_FILES['file']['error'] ) {
+
+        // error Message
+        echo 'Error: ' . $_FILES['file']['error'] . '<br>';
+
+      }
+      else {
+
+        // Upload the img to the member folder
+        move_uploaded_file($_FILES['file']['tmp_name'], "$MbrPath"."/" . $_FILES['file']['name']);
+
+      }
+
+      // Destroy the session variable whit the folder path
+      session()->forget('MemberFolderPath');
+
+    }
+    // End function
 
     public function GetEmployees()
     {
