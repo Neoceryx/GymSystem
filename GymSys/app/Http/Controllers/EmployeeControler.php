@@ -51,9 +51,6 @@ class EmployeeControler extends Controller
           $EmpName=$_Employee->Name;
           $EmpRoleId=$_Employee->EmpRoles_Id;
 
-          // Display Table info. Acces to the Fields database table
-          // echo $EmpName. " :: ". $_Employee->FstName." :: ". $_Employee->LstName." :: ".$_Employee->EmpRoles_Id;
-
         }
         // End Foreach
 
@@ -68,18 +65,19 @@ class EmployeeControler extends Controller
         }else {
 
           // Specifying a default value...
-          $value = session('key');
+          $value = session('Name');
 
           // Store a piece of data in the session...
-          session(['key' => $EmpName]);
+          session(['Name' => $EmpName , 'Role'=>$EmpRoleId]);
 
           // Validate session variable
-          if (session()->has('key')) {
+          if ( session()->has('Name')  ) {
 
             // redirect user to the view
-            echo "1";
+            echo "1 :: ". session()->get('Role');
 
           }
+          // End If
 
         }
 
@@ -97,6 +95,23 @@ class EmployeeControler extends Controller
       echo "LogOut";
     }
     //End function
+
+    public function AdminDashboard()
+    {
+
+      // Return View
+      return view("AdminViews.Dashboard");
+
+    }
+    // End function
+
+    public function NormalEmpDashBoard()
+    {
+
+      // Return View
+      return view("EmployeesViews.Dashboard");
+
+    }
 
     public function GetEmployees()
     {
