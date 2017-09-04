@@ -30,6 +30,12 @@ Route::get("Admin","EmployeeControler@AdminDashboard");
 // Normal employee Dashboard
 Route::get("Employee","EmployeeControler@NormalEmpDashBoard");
 
+// Regiter Member
+Route::post("AddMember", "EmployeeControler@AddMember");
+
+// Upload Picture
+Route::post("UploadImg", "EmployeeControler@UploadPicture");
+
 Route::get("t",function ()
 {
   // Rediret user to login form
