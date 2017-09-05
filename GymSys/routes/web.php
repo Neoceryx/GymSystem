@@ -14,12 +14,19 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
 // Display Login view
 Route::get('/', "EmployeeControler@Login");
 
 //Route::get('users', "UsersController@users");
 Route::get('user', ['as' => 'users' , 'uses' => 'UsersController@users']);
+//que ess commit
+Route::get('create', ['as' => 'create' , 'uses' => 'MemberController@create']);
+Route::post('store', ['as' => 'store' , 'uses' => 'MemberController@store']);
+Route::get('show', ['as' => 'show' , 'uses' => 'MembersController@show']);
+
+Route::get('membercreate', ['as' => 'membercreate' , 'uses' => 'MembersController@show']);
+
+//Route::get('member/create', ['as' => 'members.create' , 'uses' => 'MembersController@membercreate']);
 
 { /* Region Test Routes */
 
