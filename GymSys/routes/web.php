@@ -36,6 +36,9 @@ Route::get("t",function ()
   return redirect('/');
 });
 
+//Route::get('users', "UsersController@users");
+Route::get('user', ['as' => 'users' , 'uses' => 'UsersController@users']);
+
 { /* Region Test Routes */
 
   Route::get("Test",function ($value='') {
