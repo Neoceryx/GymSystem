@@ -15,7 +15,25 @@
 //     return view('welcome');
 // });
 // Display Login view
-Route::get('/', "EmployeeControler@Login");
+Route::get('/', "EmployeeControler@LoginView");
+
+// Login Method
+Route::post("LoginEmp", "EmployeeControler@LoginEmployee");
+
+//Logout
+Route::post("LogOut","EmployeeControler@LogOut");
+
+// Admin Dashboards
+Route::get("Admin","EmployeeControler@AdminDashboard");
+
+// Normal employee Dashboard
+Route::get("Employee","EmployeeControler@NormalEmpDashBoard");
+
+Route::get("t",function ()
+{
+  // Rediret user to login form
+  return redirect('/');
+});
 
 //Route::get('users', "UsersController@users");
 Route::get('user', ['as' => 'users' , 'uses' => 'UsersController@users']);
@@ -36,8 +54,8 @@ Route::get('membercreate', ['as' => 'membercreate' , 'uses' => 'MembersControlle
 
   Route::get("Home",function ($value='') {
 
-    // Loads the Home view
-    return view("Home");
+  // Loads the Home view
+  return view("Home");
 
   });
 
