@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+        <meta name="csrf-token" content="<?php echo csrf_token() ?>">
   </head>
   <body>
 
@@ -11,12 +12,35 @@
     <!-- Redirect User to the Test Route -->
     <a href="/Test">Test Link</a>
 
-    <div class="">
+    <?php
+
+    // Validate session variable
+    if ( session()->has('Name') && session()->has('Role') ) {
+
+      // Get Session varible
+      echo session()->get('Name');
+      echo session()->get('Role');
+      echo "<button type='button' id='js_LogOut' name='button'>Log out</button>";
+
+    }else {
+
+      // redirect user to the login form
+      echo redirect('/');
+
+    }
+    ?>
+
+        <div class="">
 
       <label for="js_Name">Name:</label>
       <input id="js_Name" type="text" name="" value="">
       <br>
       <button id="js_Send" type="button" name="button">Send</button>
+
+      <!-- Display Backend Result -->
+      <div class="result"></div>
+
+
 
     </div>
 
