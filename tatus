@@ -1,0 +1,178 @@
+[33mcommit bc0b7efdbf504a2b81c095ce5d838179591be329[m[33m ([m[1;36mHEAD -> [m[1;32mMembers[m[33m)[m
+Author: Rodrigo Sauceda <rodrigo.sauceda@gmail.com>
+Date:   Mon Sep 4 22:25:34 2017 -0700
+
+    Actualize modulo Members
+
+[33mcommit 810ccd3d7289b55f28eb137c4651bec5b8296128[m[33m ([m[1;31morigin/Users[m[33m, [m[1;31morigin/Members[m[33m, [m[1;32mUsers[m[33m)[m
+Author: rosauceda <rodrigo.sauceda@gmail.com>
+Date:   Fri Sep 1 00:06:52 2017 -0700
+
+    se creo nuevo
+    
+    controller
+
+[33mcommit 356d7a13f39d3922661b335b08ceb28a3a8da575[m
+Author: Neoceryx <dani.fierro796@gmail.com>
+Date:   Tue Aug 29 22:43:40 2017 -0700
+
+    Se Solucino el error con el archivo .env
+
+[33mcommit 7f5f4570ece1f32085d1274623b503361ca415fe[m
+Merge: 262419d b4f6eaa
+Author: Daniel Fierro <dani-deoz@hotmail.com>
+Date:   Tue Aug 29 22:00:39 2017 -0700
+
+    Merge pull request #1 from Neoceryx/Login
+    
+    Login
+
+[33mcommit b4f6eaaa7ad05ca49a35c7b7454241b47013cb8c[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Mon Aug 28 21:47:27 2017 -0700
+
+    Se agrego Materlize.rar
+
+[33mcommit 313bc640ceb13482e4c79471edbc9a5c59aaf35a[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Mon Aug 28 21:41:00 2017 -0700
+
+    Se creo la vista de login
+
+[33mcommit ed2a49d93229b686b042928a58d91bac2e595a15[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Mon Aug 28 21:40:21 2017 -0700
+
+    Se creo el metodo en el controlador para regresar la vista de login
+
+[33mcommit cbdd171a0b5ad950101b4873ec6b344130747de3[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Mon Aug 28 21:38:28 2017 -0700
+
+    Se agrego la ruta principal
+
+[33mcommit 9b67fb8205b114119cfa404a1e9ec76078a9754c[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Mon Aug 28 21:36:11 2017 -0700
+
+    Se elimino el js por default
+
+[33mcommit fdf13c60eb2e5217b4c2c1790183692f5bacbf32[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Mon Aug 28 21:35:07 2017 -0700
+
+    Se elimino el archivo css default
+
+[33mcommit a6b0d2ad402d4cb5e48cf2589f34c440035f377e[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Mon Aug 28 21:14:33 2017 -0700
+
+    Se agrego materialize al proyecto
+
+[33mcommit 1079f7725f2a6ef8c46b31f53b1436b3666db50d[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Mon Aug 28 21:12:21 2017 -0700
+
+    Se Remombro el controlador de empleados
+
+[33mcommit 539c71b93b1ccce279c3c00e4a7d40759225a011[m[33m ([m[1;31morigin/DataBase[m[33m)[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 23:39:04 2017 -0700
+
+    Se creo el controlador de Employees
+
+[33mcommit 59b75ca4e3716c8957955becf8ed2143cbb48810[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 23:38:19 2017 -0700
+
+    Se crearon las rutas para mostrar la infomacion al usuario
+
+[33mcommit c39d350dc48b1a38b52dbb6c3e19ae7b294c1adc[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 23:36:19 2017 -0700
+
+    Se creo el metodo en el controlador Employees para obtener la lista de todos los empleados
+
+[33mcommit 0a4be33bb6908d80ee881b6d43b7fd6c33edda0c[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 23:34:59 2017 -0700
+
+    Se agregaron los parametros para la conexcion con la base de datos
+
+[33mcommit 4d863bda925e495bfba94ac60765d6eca534615c[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 22:09:52 2017 -0700
+
+    Se agrego el script de Home.js en la vista Home.php
+
+[33mcommit bd49875938b27f053a8156204cc985a841382373[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 22:09:00 2017 -0700
+
+    Se creo el script para la vista de Home
+
+[33mcommit 0fdfbba3f579278288e0dd8c286c64843618644d[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 22:08:23 2017 -0700
+
+    Se agregaron las rutas de prueba
+
+[33mcommit 49ca08d6dfcc42f1407f153e9afac8ee7392a9b0[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 20:55:59 2017 -0700
+
+    Se agrego laversion 5.4 de laravel
+
+[33mcommit 4ba246b1ba4ac5a5526a912e737eb52e84fd1061[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 11:09:42 2017 -0700
+
+    Se agrego el archivo que contendra las consultas a la base de datos
+
+[33mcommit e70cd060060f711fa913d9988c0657f171aaba18[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 11:08:19 2017 -0700
+
+    Se agrego la sengunda version de la base de datos
+
+[33mcommit e89ab91de4b2b79e8fbf6a62048c2addf389113a[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sun Aug 27 11:07:14 2017 -0700
+
+    Se agrego el script de la base de datos
+
+[33mcommit 2e08a4bb1626c9217b99ece09cea0e528676117b[m[33m ([m[1;31morigin/Documentation[m[33m, [m[1;32mDocumentation[m[33m)[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sat Aug 26 19:28:32 2017 -0700
+
+    Se agregro el Modelo Entidad Relacion en Png
+
+[33mcommit 51e6b2d2721f58f17d902d656934d396d4b41439[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sat Aug 26 19:27:01 2017 -0700
+
+    Se agrego el modelo entidad relacion de la base de datos
+
+[33mcommit e6e1e93796b6ba712f6833c18626ca929bdfee17[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sat Aug 26 18:52:08 2017 -0700
+
+    Se agrego mas informacion al documento de los requqrimientos del proyecto
+
+[33mcommit 6671407ea5d4fa80cf87ae99b8970473b8162385[m
+Author: Neoceryx <dani-deoz@hotmail.com>
+Date:   Sat Aug 26 09:37:01 2017 -0700
+
+    Se agrego el documento con los requerimientos del sistema. asi como el low app flow para el empleado
+
+[33mcommit 262419db555a17afa76fbcda619b7416071cabb7[m
+Author: Daniel Fierro <dani-deoz@hotmail.com>
+Date:   Fri Aug 25 23:42:13 2017 -0700
+
+    Update README.md
+
+[33mcommit 5fe33a0c8be18d068546bdec6ed6b98c0d60d471[m
+Author: Daniel Fierro <dani-deoz@hotmail.com>
+Date:   Fri Aug 25 23:20:46 2017 -0700
+
+    Initial commit

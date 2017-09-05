@@ -55,6 +55,7 @@ class Kernel extends HttpKernel
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \GymSys\Http\Middleware\RedirectIfAuthenticated::class,
+        'verifytoken' => \GymSys\Http\Middleware\Verifytoken::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }
