@@ -6,8 +6,6 @@
 
 $(document).ready(function () {
 
-  alert("HI");
-
   // SideNav
   $(".button-collapse").sideNav();
 
