@@ -29,7 +29,8 @@ select * from EmpRoles;
 
 -- Add new Employee
 INSERT INTO Employees (Name,FstName, LstName, Address, Email, password, Phone ,EmpPhotoPath, EmpRoles_Id)
-VALUES('Daniel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 'd@gmail.com', 'pas' ,6645621957, '', 1);
+VALUES('Daniel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 'd@gmail.com', 'pas' ,6645621957, '', 1),
+('Angel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 'a@gmail.com', 'pas' ,6645621957, '', 2);
 
 select * from employees;
 

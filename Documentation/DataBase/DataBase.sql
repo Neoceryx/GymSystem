@@ -21,7 +21,7 @@ LstName varchar(50) not null,
 Address varchar(200) not null,
 Email varchar(100) not null,
 password varchar(20) not null,
-Phone int(10) not null,
+Phone varchar(10) not null,
 EmpPhotoPath varchar(100),
 EmpRoles_Id int not null,
 
@@ -84,6 +84,4 @@ foreign key (TrainingPackages_Id) references TrainingPackages(Id),
 foreign key (Trainers_Id) references Trainers(Id)
 
 );
-
-
 

@@ -9,7 +9,7 @@
     <?php
 
     // Validate session variable
-    if ( session()->has('Name') && session()->has('Role') ) {
+    if ( session()->get('Role') == 1 ) {
 
       // Get Session varible
       echo session()->get('Name');

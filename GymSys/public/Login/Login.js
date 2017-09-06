@@ -3,10 +3,16 @@ $(document).ready(function () {
   // Get App token
   let TOKEN=$("meta[name='csrf-token']").attr('content');
 
+    // Enums. to preent magic numbers in loginstring
+    const EMPLOYEEPART=0;
+    const ROLEPART=1;
+
+
+
   $("#js_BtnLgn").click(function () {
 
     // Get Employee Number
-    var EmpNmbr=parseInt($("#js_EmpNumbr").val());
+    var EmpNmbr=$("#js_EmpNumbr").val();
 
     // Get Employee Password
     var EmpPass=$("#js_Pass").val();
@@ -26,38 +32,46 @@ $(document).ready(function () {
         // Display Backend result in the dom element
         $(".result").html(data);
 
-        // Get User
+        // Get the login string
         var LoginString=$(".result").text().split("::");
+debugger
+        // get the empoye parte from login string
+        var EmpPart=LoginString[EMPLOYEEPART];
 
-        // Get Descision val
-        var UsrExist = parseInt( LoginString[0] );
+        // get Employee role from login string
+        var Role=LoginString[ROLEPART];
 
-        // Get Employee Type from the loginstring
-        var EmpType= parseInt( LoginString[1] );
+        // Validate User
+        if (EmpPart == 0) {
 
-        // Validate if the user is register
-        if (UsrExist == 0 ) {
-
-          // Redirect User to the Home view
-          alert("User is not Registered");
+          alert("User is not registered");
 
         }else {
 
-          if ( UsrExist==1 && EmpType == 1  ) {
+          // Validate if the user is admin
+          if (EmpPart == 1 && Role ==1 ) {
 
-            //  Redirect User to Admin Layout
+            // Redirect admin to the Dashboard
             window.location.href = "/Admin";
 
-          }
-          if ( UsrExist == 1 && EmpType == 2 ) {
+          }else {
 
-            // Redirect User to the Normal Employee
-            window.location.href = "/Employee";
+            // Validate if the user is normal
+            if ( EmpPart == 1 && Role == 2 ) {
+
+              // Redirect Noral user to the Dashboard
+              window.location.href = "/Employee";
+
+            }else {
+
+              alert("User or password is wrong, please verify the information");
+
+            }
 
           }
 
         }
-        // End User Validation
+        // End Validation
 
       },
       error:function (e) {
@@ -65,7 +79,6 @@ $(document).ready(function () {
         alert("An error ocurred");
         console.log(e);
         $(".result").html(e.responseText);
-
       }
 
     });
