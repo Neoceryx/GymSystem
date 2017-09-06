@@ -36,7 +36,7 @@
             if ( session()->get('Role') == 2  ) {
               // Get Session varible
               // echo session()->get('Name');
-              echo "<li><a href='#' id='js_LogOut' class='waves-effect waves-light'>Log Out</a></li>";
+              echo "<li><a href='#!' id='js_LogOut' class='waves-effect waves-light'>Log Out</a></li>";
             }else {
               // redirect user to the login form
               echo redirect('/');
