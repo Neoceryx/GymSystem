@@ -60,37 +60,45 @@ $(document).ready(function () {
     var Addrs=$("#js_MbrAddress").val();
 
     // Get picture Info
-    var PicturePath=$("#sortpicture").prop('files')[0];
+    var PicturePath=$("#js_Photo").prop('files')[0];
+
+    // Get Picture name
+    var PicName=PicturePath.name;
 
     //
     var form_data = new FormData();
 
+    // Create file
     form_data.append("file", PicturePath)
 
     console.log(form_data);
 
-    // Start ajax. User Info
+    // Creates object to the user info
+    var UserInfo={MBRNAE:MemName, FSTNAME:FstName, LSTNAME:LstName, PHONE:Phone, EMAIL:EmailMbr, ADRSS:Addrs, PICNAME:PicName };
+
+    // Start ajax. Send User info
     $.ajax({
       type:"POST",
       url:"/AddMember",
-      data:{MBRNAE:MemName},
+      data:UserInfo,
       beforeSend: function (request) {
 
         return request.setRequestHeader('X-CSRF-Token', TOKEN);
 
       },
       success:function (data) {
-        // alert(data);
+        alert(data);
         // $(".res").html(data);
       },
       error:function () {
         alert("An Error Ocurred");
+        $("body").html(e.responseText)
       }
 
     });
     // End ajax
 
-    // Start ajax. Only for the image
+    // Start ajax. To Upload the image
     $.ajax({
       type:"POST",
       url:"/UploadImg",
