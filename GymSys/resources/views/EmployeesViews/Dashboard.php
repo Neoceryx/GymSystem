@@ -139,16 +139,11 @@
           </div>
           <!-- Start Member Register Modal -->
 
-
-
         </div>
         <!-- End Modals -->
 
-
       </div>
       <!-- End Content grid -->
-
-
 
   </body>
 
