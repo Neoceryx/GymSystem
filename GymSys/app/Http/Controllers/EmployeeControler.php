@@ -158,7 +158,7 @@ class EmployeeControler extends Controller
             'Phone'=>$Phone,
             'Email'=>$Email,
             'Address'=>$Adrss,
-            'MemPhotoPath'=>$MBRFOLDER,
+            'MemPhotoPath'=>$MBRFOLDER."/".$PicName,
             'RgstrDate'=>$CrrntDate
           ]
 
