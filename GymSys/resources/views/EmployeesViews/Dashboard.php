@@ -118,28 +118,12 @@
                       <label for="js_MbrAddress">Address</label>
                     </div>
 
-                    <div class="col s6">
-                      <div class="file-field input-field">
-                        <div class="btn">
-                          <span>Picture</span>
-                          <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                          <input id="js_MbrPotho" class="file-path validate" type="text">
-                        </div>
-                      </div>
+                    <div class="input-filed col s">
+                      <input id="js_Photo" type="file" name="sortpic" />
                     </div>
 
-                    <input id="sortpicture" type="file" name="sortpic" />
-
-
-                    	<!-- <input type="file" id="fiad"><br><br>
-                      <img src="" width="200" style="display:none;" /> -->
-
-                      <div class="res">
-
-                      </div>
-
+                    <!-- Backend Display the result -->
+                    <div class="res"></div>
 
                   </div>
                 </form>
@@ -148,7 +132,7 @@
 
             <div class="modal-footer">
               <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Register</a> -->
-              <a href="#!" id="js_RegMbr" class="waves-effect waves-green btn-flat">Register</a>
+              <button id="js_RegMbr" class="waves-effect waves-green btn-flat" type="button" name="button">Register</button>
 
             </div>
 
