@@ -85,11 +85,11 @@
               <h4>New Member</h4>
 
               <div class="row">
-                <form class="col s12">
+                <form id="js_MemForm" class="col s12">
                   <div class="row">
 
                     <div class="input-field col s4">
-                      <input id="js_MbrName" type="text" name="" value="" >
+                      <input id="js_MbrName" type="text" name="jv_MbrName" value="" >
                       <label for="js_MbrName">Name or Names</label>
                     </div>
 
@@ -152,7 +152,13 @@
   <script type="text/javascript" src="materialize\js\materialize.min.js"></script>
   <script type="text/javascript" src="Main.js"></script>
 
+  <!-- Jquery Validator -->
+  <script type="text/javascript"src="Plugins\jquery.validate.min.js"></script>
+
   <!-- Aditional js -->
   <script type="text/javascript" src="NormalEmployee\DashBoard.js"></script>
+
+  <!-- AddMember js -->
+  <script type="text/javascript" src="NormalEmployee\AddMembers.js"></script>
 
 </html>
