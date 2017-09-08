@@ -94,32 +94,32 @@
                     </div>
 
                     <div class="input-field col s4">
-                      <input id="js_MbrFstName" type="text" name="" value="" >
+                      <input id="js_MbrFstName" type="text" name="jv_MbrFstName" value="" >
                       <label for="js_MbrFstName">First Name</label>
                     </div>
 
                     <div class="input-field col s4">
-                      <input id="js_MbrLstName" type="text" name="" value="" >
+                      <input id="js_MbrLstName" type="text" name="jv_MbrLstName" value="" >
                       <label for="js_MbrLstName">Last Name</label>
                     </div>
 
                     <div class="input-field col s3">
-                      <input id="js_MbrPhone" type="text" name="" value="" >
+                      <input id="js_MbrPhone" type="text" name="jv_MbrPhone" value="" >
                       <label for="js_MbrPhone">Phone</label>
                     </div>
 
                     <div class="input-field col s9">
-                      <input id="js_MbrMail" type="text" name="" value="" >
+                      <input id="js_MbrMail" type="text" name="jv_MbrMail" value="" >
                       <label for="js_MbrMail">Email</label>
                     </div>
 
                     <div class="input-field col s6">
-                      <input id="js_MbrAddress" type="text" name="" value="" >
+                      <input id="js_MbrAddress" type="text" name="jv_MbrAddress" value="" >
                       <label for="js_MbrAddress">Address</label>
                     </div>
 
                     <div class="input-filed col s">
-                      <input id="js_Photo" type="file" name="sortpic" />
+                      <input id="js_Photo" type="file" name="js_Photo" />
                     </div>
 
                     <!-- Backend Display the result -->

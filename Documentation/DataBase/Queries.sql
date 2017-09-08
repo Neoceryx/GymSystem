@@ -37,4 +37,17 @@ select * from employees;
 delete from employees where (Id = 1);
 
 -- Reset Autoincrement
-ALTER TABLE employees AUTO_INCREMENT = 1
+ALTER TABLE employees AUTO_INCREMENT = 1;
+
+-- Add new members
+select * from members;
+
+delete from members where (Id=1);
+
+-- Reset Autoincrement
+ALTER TABLE members AUTO_INCREMENT = 1;
+
+-- Validate if a member exists
+select count(*) from members where (Name like '%esteban%' AND FstName like'%fierro%' AND LstName like'%alcala%');
+-- if return 0. Member not exists, if return > 1 Member exists
+
