@@ -44,7 +44,8 @@ class MembersController extends Controller
       foreach ($MbrInfo as $_member) {
 
         // Display table info
-        echo $_member->Name;
+        echo $_member->Name."::".$_member->FstName."::".$_member->LstName."::".
+        $_member->Phone."::".$_member->Email."::".$_member->Address."::".$_member->MemPhotoPath;
 
       }
 
