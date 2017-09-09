@@ -9,10 +9,6 @@ use DB;
 
 use Illuminate\Support\Facades\Auth;
 
-// Load Members Model
-use GymSys\MembersModel;
-
-
 class EmployeeControler extends Controller
 {
 
@@ -228,25 +224,6 @@ class EmployeeControler extends Controller
 
     }
     // End function
-
-    public function GetMembers()
-    {
-
-      // Get Members list from MembersModel
-      $Memlist =MembersModel::GetMembers();
-
-      // Iterate over the table
-      foreach ($Memlist as $_member) {
-
-        // Display table info
-        echo "<img src='$_member->MemPhotoPath' alt=''>";
-
-      }
-
-      //debugger
-      // dd($Memlist;);
-
-    }
 
 }
 // End Class

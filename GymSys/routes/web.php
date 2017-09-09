@@ -37,7 +37,7 @@ Route::post("AddMember", "EmployeeControler@AddMember");
 Route::post("UploadImg", "EmployeeControler@UploadPicture");
 
 // Members list
-Route::get("Members","EmployeeControler@GetMembers");
+Route::get("Members","MembersController@GetMembers");
 
 Route::get("t",function ()
 {

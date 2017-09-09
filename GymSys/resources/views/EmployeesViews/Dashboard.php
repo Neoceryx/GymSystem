@@ -25,7 +25,12 @@
         <div class="nav-wrapper light-blue lighten-3">
 
           <!-- Logo -->
-          <a href="/Employee" class="brand-logo">Logo</a>
+          <a href="/Employee" class="brand-logo" style="margin-left:5%">Logo</a>
+
+          <!-- Side bar Button -->
+          <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+            <i class="material-icons">menu</i>
+          </a>
 
           <!-- Start Links -->
           <ul class="right hide-on-med-and-down">
@@ -50,6 +55,14 @@
       </nav>
     </div>
     <!-- End NavBar -->
+
+    <!-- Start SideBar -->
+    <ul id="slide-out" class="side-nav">
+      <li><a href="Members" target="_blank">Member List</a></li>
+    </ul>
+    <!-- End SideBar -->
+
+
 
     <?php
       echo "<h2 class='center-align' > Welcome ". session()->get("Name") ."</h2>";
