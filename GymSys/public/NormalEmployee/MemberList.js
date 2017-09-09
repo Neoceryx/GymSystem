@@ -4,7 +4,8 @@
 
 $(document).ready(function () {
 
-  console.log("Hi from Members List.js");
+  // Get App token
+  let TOKEN=$("meta[name='csrf-token']").attr('content');
 
   $("tr").click(function () {
 
@@ -12,9 +13,36 @@ $(document).ready(function () {
     var Item = $(this);
 
     // get the member id. whit out use id in the td
-    var MemName=Item.find("td").eq(0).data("idmem");
-    console.log("Member Id: "+MemName);
+    var IdMem=Item.data("idmem");
 
+    // Open MemberDetails info Modal
+    $('#modal1').modal('open');
+
+    // Put the member id on the modal header
+    $("#js_IdMem").text(IdMem);
+
+    // Start ajax
+    $.ajax({
+      type:"POST",
+      url:"/MemberInfo",
+      data:{IDMBR:IdMem},
+      beforeSend: function (request) {
+
+        return request.setRequestHeader('X-CSRF-Token', TOKEN);
+
+      },
+      success:function (data) {
+
+        // Display Backend Result in the dom
+        $("#js_MbrResult").html(data);
+
+      },
+      error:function (e) {
+        alert("An error ocurred");
+        $("#js_MbrResult").html(e.responseText);
+      }
+    });
+    // End ajax
 
   });
   // End Click
