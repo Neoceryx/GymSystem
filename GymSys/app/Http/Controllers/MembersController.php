@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 // Load Members Model
 use GymSys\MembersModel;
 
+// Database Library
+use DB;
+
 class MembersController extends Controller
 {
 
@@ -30,9 +33,23 @@ class MembersController extends Controller
 
       // Get MemberId from ajax call
       $IdMember=$_POST["IDMBR"];
+      // echo $IdMember;
 
-      echo $IdMember;
+      // Build the query
+      $MbrInfo=DB::table("members")
+      ->where('Id', '=', $IdMember)
+      ->get();
+
+      // Iterate over the table
+      foreach ($MbrInfo as $_member) {
+
+        // Display table info
+        echo $_member->Name;
+
+      }
 
     }
+    // End function
 
 }
+// End Controller

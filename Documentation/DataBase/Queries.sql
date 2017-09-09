@@ -51,3 +51,10 @@ ALTER TABLE members AUTO_INCREMENT = 1;
 select count(*) from members where (Name like '%esteban%' AND FstName like'%fierro%' AND LstName like'%alcala%');
 -- if return 0. Member not exists, if return > 1 Member exists
 
+-- Get Member infp by id
+select * from members where (Id=1);
+
+-- Get employees Info
+select employees.Id, Name, FstName, LstName, Address, Email, Phone, EmpPhotoPath, emproles.Description  from employees
+inner join emproles on (employees.EmpRoles_Id = emproles.Id);
+
