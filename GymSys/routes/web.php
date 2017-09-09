@@ -38,22 +38,15 @@ Route::post("UploadImg", "EmployeeControler@UploadPicture");
 // Members list
 Route::get("Members","MembersController@GetMembers");
 
+// Member details Info
+Route::post("MemberInfo", "MembersController@GetMbrById");
+
 Route::get("t",function ()
 {
   // Rediret user to login form
   return redirect('/');
 });
 
-//Route::get('users', "UsersController@users");
-Route::get('user', ['as' => 'users' , 'uses' => 'UsersController@users']);
-//que ess commit
-Route::get('create', ['as' => 'create' , 'uses' => 'MemberController@create']);
-Route::post('store', ['as' => 'store' , 'uses' => 'MemberController@store']);
-Route::get('show', ['as' => 'show' , 'uses' => 'MembersController@show']);
-
-Route::get('membercreate', ['as' => 'membercreate' , 'uses' => 'MembersController@show']);
-
-//Route::get('member/create', ['as' => 'members.create' , 'uses' => 'MembersController@membercreate']);
 
 { /* Region Test Routes */
 
