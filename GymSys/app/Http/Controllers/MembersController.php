@@ -9,10 +9,6 @@ use GymSys\MembersModel;
 
 class MembersController extends Controller
 {
-    public function FunctionName()
-    {
-      return "Hello";
-    }
 
     public function GetMembers()
     {
@@ -28,5 +24,15 @@ class MembersController extends Controller
 
     }
     // End function
+
+    public function GetMbrById()
+    {
+
+      // Get MemberId from ajax call
+      $IdMember=$_POST["IDMBR"];
+
+      echo $IdMember;
+
+    }
 
 }
