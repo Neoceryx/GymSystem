@@ -43,9 +43,11 @@ class MembersController extends Controller
       // Iterate over the table
       foreach ($MbrInfo as $_member) {
 
+        echo "<img src=".$_member->MemPhotoPath." class='circle responsive-img'>";
+
         // Display table info
-        echo $_member->Name."::".$_member->FstName."::".$_member->LstName."::".
-        $_member->Phone."::".$_member->Email."::".$_member->Address."::".$_member->MemPhotoPath;
+        // echo $_member->Name."::".$_member->FstName."::".$_member->LstName."::".
+        // $_member->Phone."::".$_member->Email."::".$_member->Address;
 
       }
 
