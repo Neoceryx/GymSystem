@@ -87,8 +87,8 @@
            foreach ($Members as $_member) {
 
              echo "
-             <tr>
-               <td data-idmem='$_member->Id'>".$_member->Id."</td>
+             <tr data-idmem='$_member->Id'>
+               <td>".$_member->Id."</td>
                <td>".$_member->Name."</td>
                <td>".$_member->FstName."</td>
                <td>".$_member->LstName."</td>
@@ -109,6 +109,22 @@
 
     </div>
     <!-- End Content -->
+
+    <!-- Start Modal Members details info -->
+    <div>
+
+      <!-- Start Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+
+          <h2 id="js_IdMem"></h2>
+          <p id="js_MbrResult">a bunch of text</p>
+
+        </div>
+      </div>
+      <!-- End Modal Structure -->
+
+    </div>
 
   </body>
 
