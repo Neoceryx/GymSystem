@@ -7,8 +7,6 @@ $(document).ready(function () {
     const EMPLOYEEPART=0;
     const ROLEPART=1;
 
-
-
   $("#js_BtnLgn").click(function () {
 
     // Get Employee Number
@@ -34,7 +32,7 @@ $(document).ready(function () {
 
         // Get the login string
         var LoginString=$(".result").text().split("::");
-debugger
+
         // get the empoye parte from login string
         var EmpPart=LoginString[EMPLOYEEPART];
 

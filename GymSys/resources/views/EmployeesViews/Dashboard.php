@@ -25,7 +25,12 @@
         <div class="nav-wrapper light-blue lighten-3">
 
           <!-- Logo -->
-          <a href="/Employee" class="brand-logo">Logo</a>
+          <a href="/Employee" class="brand-logo" style="margin-left:5%">Logo</a>
+
+          <!-- Side bar Button -->
+          <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+            <i class="material-icons">menu</i>
+          </a>
 
           <!-- Start Links -->
           <ul class="right hide-on-med-and-down">
@@ -50,6 +55,14 @@
       </nav>
     </div>
     <!-- End NavBar -->
+
+    <!-- Start SideBar -->
+    <ul id="slide-out" class="side-nav">
+      <li><a href="Members" target="_blank">Member List</a></li>
+    </ul>
+    <!-- End SideBar -->
+
+
 
     <?php
       echo "<h2 class='center-align' > Welcome ". session()->get("Name") ."</h2>";
@@ -85,61 +98,45 @@
               <h4>New Member</h4>
 
               <div class="row">
-                <form class="col s12">
+                <form id="js_MemForm" class="col s12">
                   <div class="row">
 
                     <div class="input-field col s4">
-                      <input id="js_MbrName" type="text" name="" value="" >
+                      <input id="js_MbrName" type="text" name="jv_MbrName" value="" >
                       <label for="js_MbrName">Name or Names</label>
                     </div>
 
                     <div class="input-field col s4">
-                      <input id="js_MbrFstName" type="text" name="" value="" >
+                      <input id="js_MbrFstName" type="text" name="jv_MbrFstName" value="" >
                       <label for="js_MbrFstName">First Name</label>
                     </div>
 
                     <div class="input-field col s4">
-                      <input id="js_MbrLstName" type="text" name="" value="" >
+                      <input id="js_MbrLstName" type="text" name="jv_MbrLstName" value="" >
                       <label for="js_MbrLstName">Last Name</label>
                     </div>
 
                     <div class="input-field col s3">
-                      <input id="js_MbrPhone" type="text" name="" value="" >
+                      <input id="js_MbrPhone" type="text" name="jv_MbrPhone" value="" >
                       <label for="js_MbrPhone">Phone</label>
                     </div>
 
                     <div class="input-field col s9">
-                      <input id="js_MbrMail" type="text" name="" value="" >
+                      <input id="js_MbrMail" type="text" name="jv_MbrMail" value="" >
                       <label for="js_MbrMail">Email</label>
                     </div>
 
                     <div class="input-field col s6">
-                      <input id="js_MbrAddress" type="text" name="" value="" >
+                      <input id="js_MbrAddress" type="text" name="jv_MbrAddress" value="" >
                       <label for="js_MbrAddress">Address</label>
                     </div>
 
-                    <div class="col s6">
-                      <div class="file-field input-field">
-                        <div class="btn">
-                          <span>Picture</span>
-                          <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                          <input id="js_MbrPotho" class="file-path validate" type="text">
-                        </div>
-                      </div>
+                    <div class="input-filed col s">
+                      <input id="js_Photo" type="file" name="js_Photo" />
                     </div>
 
-                    <input id="sortpicture" type="file" name="sortpic" />
-
-
-                    	<!-- <input type="file" id="fiad"><br><br>
-                      <img src="" width="200" style="display:none;" /> -->
-
-                      <div class="res">
-
-                      </div>
-
+                    <!-- Backend Display the result -->
+                    <div class="res"></div>
 
                   </div>
                 </form>
@@ -148,23 +145,18 @@
 
             <div class="modal-footer">
               <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Register</a> -->
-              <a href="#!" id="js_RegMbr" class="waves-effect waves-green btn-flat">Register</a>
+              <button id="js_RegMbr" class="waves-effect waves-green btn-flat" type="button" name="button">Register</button>
 
             </div>
 
           </div>
           <!-- Start Member Register Modal -->
 
-
-
         </div>
         <!-- End Modals -->
 
-
       </div>
       <!-- End Content grid -->
-
-
 
   </body>
 
@@ -173,7 +165,13 @@
   <script type="text/javascript" src="materialize\js\materialize.min.js"></script>
   <script type="text/javascript" src="Main.js"></script>
 
+  <!-- Jquery Validator -->
+  <script type="text/javascript"src="Plugins\jquery.validate.min.js"></script>
+
   <!-- Aditional js -->
   <script type="text/javascript" src="NormalEmployee\DashBoard.js"></script>
+
+  <!-- AddMember js -->
+  <script type="text/javascript" src="NormalEmployee\AddMembers.js"></script>
 
 </html>

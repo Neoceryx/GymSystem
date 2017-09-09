@@ -35,6 +35,9 @@ Route::post("AddMember", "EmployeeControler@AddMember");
 // Upload Picture
 Route::post("UploadImg", "EmployeeControler@UploadPicture");
 
+// Members list
+Route::get("Members","MembersController@GetMembers");
+
 Route::get("t",function ()
 {
   // Rediret user to login form

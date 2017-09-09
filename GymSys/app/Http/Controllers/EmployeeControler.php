@@ -9,7 +9,6 @@ use DB;
 
 use Illuminate\Support\Facades\Auth;
 
-
 class EmployeeControler extends Controller
 {
 
@@ -119,11 +118,52 @@ class EmployeeControler extends Controller
       // Get Member name from ajax call
       $Name=$_POST['MBRNAE'];
 
+      // Get Member FirstName
+      $FstName=$_POST["FSTNAME"];
+
+      // Get lastName
+      $LstName=$_POST["LSTNAME"];
+
+      // Get Phone
+      $Phone=$_POST["PHONE"];
+
+      // Get Emial
+      $Email=$_POST["EMAIL"];
+
+      // Get Addres
+      $Adrss=$_POST["ADRSS"];
+
+      // Get picture Name
+      $PicName=$_POST['PICNAME'];
+
+      // Get current date and time
+      $CrrntDate = date('Y-m-d H:i:s');
+
       // Specify path member folder and name
       $MBRFOLDER="Pictures/Members/".$Name."";
 
       // Store the folder path into the session variable
       session()->put('MemberFolderPath', $MBRFOLDER);
+
+      echo $Name." : ".$FstName." : ".$LstName." : ".$Phone." : ".$Email.":".$Adrss;
+
+      { /* Region Register new member */
+
+        DB::table('members')->insert(
+          [
+            'Name' => $Name,
+            'FstName'=>$FstName,
+            'LstName'=>$LstName,
+            'Phone'=>$Phone,
+            'Email'=>$Email,
+            'Address'=>$Adrss,
+            'MemPhotoPath'=>$MBRFOLDER."/".$PicName,
+            'RgstrDate'=>$CrrntDate
+          ]
+
+        );
+
+      } /* End Region */
 
       { /* Region Upload Picture member */
 
@@ -184,7 +224,6 @@ class EmployeeControler extends Controller
 
     }
     // End function
-
 
 }
 // End Class
