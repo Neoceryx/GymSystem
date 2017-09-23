@@ -47,7 +47,6 @@ errorClass: "active",
 
       // Get Member Name
       var MemName=$("#js_MbrName").val().trim();
-      debugger
 
       // Get Member FstName
       var FstName=$("#js_MbrFstName").val().trim();
@@ -78,7 +77,7 @@ errorClass: "active",
 
       // Creates object to the user info
       var UserInfo={MBRNAE:MemName, FSTNAME:FstName, LSTNAME:LstName, PHONE:Phone, EMAIL:EmailMbr, ADRSS:Addrs, PICNAME:PicName };
-
+debugger
       // Start ajax. Send User info
       $.ajax({
         type:"POST",
@@ -90,10 +89,12 @@ errorClass: "active",
 
         },
         success:function (data) {
+          debugger
+
           alert(data);
           // $(".res").html(data);
         },
-        error:function () {
+        error:function (e) {
           alert("An Error Ocurred");
           $("body").html(e.responseText)
         }
@@ -102,30 +103,30 @@ errorClass: "active",
       // End ajax
 
       // Start ajax. To Upload the image
-      $.ajax({
-        type:"POST",
-        url:"/UploadImg",
-        dataType: 'text',  // what to expect back from the PHP script, if anything
-        cache: false,
-        contentType: false,
-        processData: false,
-        data:form_data,
-        beforeSend: function (request) {
-
-          return request.setRequestHeader('X-CSRF-Token', TOKEN);
-
-        },
-        success:function (data) {
-
-          $(".res").html(data);
-
-        },
-        error:function (e) {
-          alert("An Error Ocurred");
-          $("body").html(e.responseText)
-
-        }
-      });
+      // $.ajax({
+      //   type:"POST",
+      //   url:"/UploadImg",
+      //   dataType: 'text',  // what to expect back from the PHP script, if anything
+      //   cache: false,
+      //   contentType: false,
+      //   processData: false,
+      //   data:form_data,
+      //   beforeSend: function (request) {
+      //
+      //     return request.setRequestHeader('X-CSRF-Token', TOKEN);
+      //
+      //   },
+      //   success:function (data) {
+      //
+      //     $(".res").html(data);
+      //
+      //   },
+      //   error:function (e) {
+      //     alert("An Error Ocurred");
+      //     $("body").html(e.responseText)
+      //
+      //   }
+      // });
       // End ajax
 
     }
