@@ -154,27 +154,25 @@ class EmployeeControler extends Controller
 
         // Get the numbers of repeats from a new member
         $MbrExist = DB::table('members')
-        ->select(" Name ")
-        ->where("Name", $Name )
+        ->where("Name", "like" , "%$Name%" )
         ->count();
 
-        echo $MbrExist;
-
-
         // Validate if the new members is not registered
-        if ( $MbrExist == "0" ) {
+        if ( $MbrExist == "" ) {
+
+          echo "0";
 
           // Build the query
-          // DB::table('members')->insert([
-          //     'Name' => $Name,
-          //     'FstName'=>$FstName,
-          //     'LstName'=>$LstName,
-          //     'Phone'=>$Phone,
-          //     'Email'=>$Email,
-          //     'Address'=>$Adrss,
-          //     'MemPhotoPath'=>$MBRFOLDER."/".$PicName,
-          //     'RgstrDate'=>$CrrntDate
-          //   ]);
+          DB::table('members')->insert([
+              'Name' => $Name,
+              'FstName'=>$FstName,
+              'LstName'=>$LstName,
+              'Phone'=>$Phone,
+              'Email'=>$Email,
+              'Address'=>$Adrss,
+              'MemPhotoPath'=>$MBRFOLDER."/".$PicName,
+              'RgstrDate'=>$CrrntDate
+            ]);
 
         }else {
 

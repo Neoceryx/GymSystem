@@ -77,7 +77,7 @@ errorClass: "active",
 
       // Creates object to the user info
       var UserInfo={MBRNAE:MemName, FSTNAME:FstName, LSTNAME:LstName, PHONE:Phone, EMAIL:EmailMbr, ADRSS:Addrs, PICNAME:PicName };
-debugger
+
       // Start ajax. Send User info
       $.ajax({
         type:"POST",
@@ -89,9 +89,46 @@ debugger
 
         },
         success:function (data) {
-          debugger
 
-          alert(data);
+          // Validate if a member exist
+          if (data=="0") {
+
+            alert("New Member Registered");
+
+            // Start ajax. To Upload the image
+            $.ajax({
+              type:"POST",
+              url:"/UploadImg",
+              dataType: 'text',  // what to expect back from the PHP script, if anything
+              cache: false,
+              contentType: false,
+              processData: false,
+              data:form_data,
+              beforeSend: function (request) {
+
+                return request.setRequestHeader('X-CSRF-Token', TOKEN);
+
+              },
+              success:function (data) {
+
+                $(".res").html(data);
+
+              },
+              error:function (e) {
+                alert("An Error Ocurred");
+                $("body").html(e.responseText)
+
+              }
+            });
+            // End ajax
+
+          }else {
+
+            alert("This member is alleady register");
+
+          }
+
+          // Display backend result in the dom
           // $(".res").html(data);
         },
         error:function (e) {
@@ -100,33 +137,6 @@ debugger
         }
 
       });
-      // End ajax
-
-      // Start ajax. To Upload the image
-      // $.ajax({
-      //   type:"POST",
-      //   url:"/UploadImg",
-      //   dataType: 'text',  // what to expect back from the PHP script, if anything
-      //   cache: false,
-      //   contentType: false,
-      //   processData: false,
-      //   data:form_data,
-      //   beforeSend: function (request) {
-      //
-      //     return request.setRequestHeader('X-CSRF-Token', TOKEN);
-      //
-      //   },
-      //   success:function (data) {
-      //
-      //     $(".res").html(data);
-      //
-      //   },
-      //   error:function (e) {
-      //     alert("An Error Ocurred");
-      //     $("body").html(e.responseText)
-      //
-      //   }
-      // });
       // End ajax
 
     }
