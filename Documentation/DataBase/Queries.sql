@@ -39,10 +39,17 @@ delete from employees where (Id = 1);
 -- Reset Autoincrement
 ALTER TABLE employees AUTO_INCREMENT = 1;
 
+
 -- Add new members
+insert into members (Name,FstName,LstName,Phone,Email,Address,MemPhotoPath,RgstrDate)
+values('daniel', 'Fierro', 'Najera', 159753, 'daniel@gmail.com', 'addrs','', now() );
+
 select * from members;
 
-delete from members where (Id=1);
+delete from members where (Id BETWEEN 1 AND 100);
+
+-- Validate if memberx exist
+select count(*) from members where (Name like'%Daniel%');
 
 -- Reset Autoincrement
 ALTER TABLE members AUTO_INCREMENT = 1;
