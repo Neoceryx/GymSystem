@@ -145,23 +145,44 @@ class EmployeeControler extends Controller
       // Store the folder path into the session variable
       session()->put('MemberFolderPath', $MBRFOLDER);
 
-      echo $Name." : ".$FstName." : ".$LstName." : ".$Phone." : ".$Email.":".$Adrss;
+      // Initialize the variable
+      $MbrExist="";
+
+    //  echo $Name." : ".$FstName." : ".$LstName." : ".$Phone." : ".$Email.":".$Adrss;
 
       { /* Region Register new member */
 
-        DB::table('members')->insert(
-          [
-            'Name' => $Name,
-            'FstName'=>$FstName,
-            'LstName'=>$LstName,
-            'Phone'=>$Phone,
-            'Email'=>$Email,
-            'Address'=>$Adrss,
-            'MemPhotoPath'=>$MBRFOLDER."/".$PicName,
-            'RgstrDate'=>$CrrntDate
-          ]
+        // Get the numbers of repeats from a new member
+        $MbrExist = DB::table('members')
+        ->select(" Name ")
+        ->where("Name", $Name )
+        ->count();
 
-        );
+        echo $MbrExist;
+
+
+        // Validate if the new members is not registered
+        if ( $MbrExist == "0" ) {
+
+          // Build the query
+          // DB::table('members')->insert([
+          //     'Name' => $Name,
+          //     'FstName'=>$FstName,
+          //     'LstName'=>$LstName,
+          //     'Phone'=>$Phone,
+          //     'Email'=>$Email,
+          //     'Address'=>$Adrss,
+          //     'MemPhotoPath'=>$MBRFOLDER."/".$PicName,
+          //     'RgstrDate'=>$CrrntDate
+          //   ]);
+
+        }else {
+
+          // Print the numbers of repeats from the member
+          echo $MbrExist;
+
+        }
+        // End validation
 
       } /* End Region */
 
