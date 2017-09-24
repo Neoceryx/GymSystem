@@ -148,14 +148,19 @@ class EmployeeControler extends Controller
       // Initialize the variable
       $MbrExist="";
 
-    //  echo $Name." : ".$FstName." : ".$LstName." : ".$Phone." : ".$Email.":".$Adrss;
+      //  echo $Name." : ".$FstName." : ".$LstName." : ".$Phone." : ".$Email.":".$Adrss;
 
       { /* Region Register new member */
 
         // Get the numbers of repeats from a new member
         $MbrExist = DB::table('members')
-        ->where("Name", "like" , "%$Name%" )
+        ->where([
+          ["Name", "like" , "%$Name%"],
+          ["FstName", "like" , "%$FstName%"],
+          ["LstName", "like" , "%$LstName%"]
+        ])
         ->count();
+        // select count(*) from members where(Name = '' AND FstName='' AND LstName='')
 
         // Validate if the new members is not registered
         if ( $MbrExist == "" ) {

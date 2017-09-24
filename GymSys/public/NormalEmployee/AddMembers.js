@@ -42,7 +42,7 @@ errorClass: "active",
   // Add New Member
   $("#js_RegMbr").click(function () {
 
-    // Validate rules form call. valid if the form has values
+    // Call Validations Form Rules. valid if the form has values
     if ( $("#js_MemForm").valid() ) {
 
       // Get Member Name
