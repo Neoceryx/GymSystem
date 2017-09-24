@@ -37,7 +37,7 @@
             <li><a href="#">Link 1</a></li>
 
             <?php
-            // Validate session variable
+            // Validate if the user is Normal User
             if ( session()->get('Role') == 2  ) {
               // Get Session varible
               // echo session()->get('Name');
@@ -150,7 +150,7 @@
             </div>
 
           </div>
-          <!-- Start Member Register Modal -->
+          <!-- End Member Register Modal -->
 
         </div>
         <!-- End Modals -->
