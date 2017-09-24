@@ -63,8 +63,6 @@
     </ul>
     <!-- End SideBar -->
 
-
-
     <?php
     echo "<h2 class='center-align' > Welcome ". session()->get("Name") ."</h2>";
      ?>
@@ -87,6 +85,22 @@
         </div>
       </div>
       <!-- End Add Members card -->
+
+      <!-- Start Add Employee card -->
+      <div class="col s12 m3">
+        <div class="card-panel teal" id="js_NewEmp">
+          <span class="white-text center-align">
+
+            <div class="center-align">
+              <i class="material-icons large ">&#xE7FE;</i>
+            </div>
+
+            <h4>New Employee</h4>
+
+          </span>
+        </div>
+      </div>
+      <!-- End Add Employee card  -->
 
       <!-- Start Modals -->
       <div>
@@ -152,6 +166,19 @@
         </div>
         <!-- End Member Register Modal -->
 
+        <!-- Start Employee register Modal -->
+        <div id="js_NewEmpModal" class="modal">
+          <div class="modal-content">
+            <h4>New Employee Register Modal</h4>
+
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="waves-green btn-flat">Register</a>
+          </div>
+        </div>
+        <!-- Start Employee register Modal -->
+
+
       </div>
       <!-- End Modals -->
 
@@ -162,7 +189,7 @@
 
   <!-- Jquery  -->
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-  
+
   <script type="text/javascript" src="materialize\js\materialize.min.js"></script>
   <script type="text/javascript" src="Main.js"></script>
 
@@ -175,6 +202,7 @@
   <!-- AddMember js -->
   <script type="text/javascript" src="NormalEmployee\AddMembers.js"></script>
 
-
+  <!-- AddEmployee js -->
+  <script type="text/javascript" src="AdminEmployee\AddEmployee.js"></script>
 
 </html>
