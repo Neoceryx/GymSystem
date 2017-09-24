@@ -42,12 +42,11 @@ errorClass: "active",
   // Add New Member
   $("#js_RegMbr").click(function () {
 
-    // Validate rules form call. valid if the form has values
+    // Call Validations Form Rules. valid if the form has values
     if ( $("#js_MemForm").valid() ) {
 
       // Get Member Name
       var MemName=$("#js_MbrName").val().trim();
-      debugger
 
       // Get Member FstName
       var FstName=$("#js_MbrFstName").val().trim();
@@ -90,41 +89,56 @@ errorClass: "active",
 
         },
         success:function (data) {
-          alert(data);
+
+          // Validate if a member exist
+          if (data=="0") {
+
+            alert("New Member Registered");
+
+            // Start ajax. To Upload the image
+            $.ajax({
+              type:"POST",
+              url:"/UploadImg",
+              dataType: 'text',  // what to expect back from the PHP script, if anything
+              cache: false,
+              contentType: false,
+              processData: false,
+              data:form_data,
+              beforeSend: function (request) {
+
+                return request.setRequestHeader('X-CSRF-Token', TOKEN);
+
+              },
+              success:function (data) {
+
+                $(".res").html(data);
+
+                // Clear from fields
+                $("#js_MemForm")[0].reset();
+
+              },
+              error:function (e) {
+                alert("An Error Ocurred");
+                $("body").html(e.responseText)
+
+              }
+            });
+            // End ajax
+
+          }else {
+
+            alert("This member is alleady register");
+
+          }
+
+          // Display backend result in the dom
           // $(".res").html(data);
-        },
-        error:function () {
-          alert("An Error Ocurred");
-          $("body").html(e.responseText)
-        }
-
-      });
-      // End ajax
-
-      // Start ajax. To Upload the image
-      $.ajax({
-        type:"POST",
-        url:"/UploadImg",
-        dataType: 'text',  // what to expect back from the PHP script, if anything
-        cache: false,
-        contentType: false,
-        processData: false,
-        data:form_data,
-        beforeSend: function (request) {
-
-          return request.setRequestHeader('X-CSRF-Token', TOKEN);
-
-        },
-        success:function (data) {
-
-          $(".res").html(data);
-
         },
         error:function (e) {
           alert("An Error Ocurred");
           $("body").html(e.responseText)
-
         }
+
       });
       // End ajax
 

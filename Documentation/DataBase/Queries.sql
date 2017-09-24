@@ -39,15 +39,29 @@ delete from employees where (Id = 1);
 -- Reset Autoincrement
 ALTER TABLE employees AUTO_INCREMENT = 1;
 
+
 -- Add new members
+insert into members (Name,FstName,LstName,Phone,Email,Address,MemPhotoPath,RgstrDate)
+values('daniel', 'Fierro', 'Najera', 159753, 'daniel@gmail.com', 'addrs','', now() );
+
 select * from members;
 
-delete from members where (Id=1);
+delete from members where (Id BETWEEN 1 AND 100);
 
 -- Reset Autoincrement
 ALTER TABLE members AUTO_INCREMENT = 1;
 
+-- Validate if memberx exist
+select count(*) from members where (Name like'%Daniel%' AND FstName like'%fierro%' AND LstName like'%najera%' );
+
 -- Validate if a member exists
 select count(*) from members where (Name like '%esteban%' AND FstName like'%fierro%' AND LstName like'%alcala%');
 -- if return 0. Member not exists, if return > 1 Member exists
+
+-- Get Member infp by id
+select * from members where (Id=1);
+
+-- Get employees Info
+select employees.Id, Name, FstName, LstName, Address, Email, Phone, EmpPhotoPath, emproles.Description  from employees
+inner join emproles on (employees.EmpRoles_Id = emproles.Id);
 
