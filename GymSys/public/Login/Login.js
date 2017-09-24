@@ -28,7 +28,7 @@ $(document).ready(function () {
       success:function (data) {
 
         // Display Backend result in the dom element
-        $(".result").html(data);
+        $(".result").html(data).hide();
 
         // Get the login string
         var LoginString=$(".result").text().split("::");
