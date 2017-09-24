@@ -48,11 +48,11 @@ select * from members;
 
 delete from members where (Id BETWEEN 1 AND 100);
 
--- Validate if memberx exist
-select count(*) from members where (Name like'%Daniel%');
-
 -- Reset Autoincrement
 ALTER TABLE members AUTO_INCREMENT = 1;
+
+-- Validate if memberx exist
+select count(*) from members where (Name like'%Daniel%' AND FstName like'%fierro%' AND LstName like'%najera%' );
 
 -- Validate if a member exists
 select count(*) from members where (Name like '%esteban%' AND FstName like'%fierro%' AND LstName like'%alcala%');
