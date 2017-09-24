@@ -113,6 +113,9 @@ errorClass: "active",
 
                 $(".res").html(data);
 
+                // Clear from fields
+                $("#js_MemForm")[0].reset();
+
               },
               error:function (e) {
                 alert("An Error Ocurred");
