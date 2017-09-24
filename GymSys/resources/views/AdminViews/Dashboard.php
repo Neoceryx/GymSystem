@@ -162,10 +162,7 @@
 
   <!-- Jquery  -->
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-
-  <!-- Aditional js -->
-  <script type="text/javascript" src="Admins\Dashboard.js"></script>
-
+  
   <script type="text/javascript" src="materialize\js\materialize.min.js"></script>
   <script type="text/javascript" src="Main.js"></script>
 
