@@ -192,24 +192,24 @@
                     <input id="js_EmpLstName" type="text" name="" value="">
                   </div>
 
-                  <div class="input-field col s12">
+                  <div class="input-field col s3">
+                    <label for="js_EmpPhone">Phone Number</label>
+                    <input id="js_EmpPhone" type="text" name="" value="">
+                  </div>
+
+                  <div class="input-field col s9">
                     <label for="js_EmpAddrs">Address</label>
                     <input id="js_EmpAddrs" type="text" name="" value="">
                   </div>
 
-                  <div class="input-field col s3">
+                  <div class="input-field col s5">
                     <label for="js_EmpMail">E-mail</label>
                     <input id="js_EmpMail" type="text" name="" value="">
                   </div>
 
-                  <div class="input-field col s3">
+                  <div class="input-field col s4">
                     <label for="js_EmpPass">Password</label>
                     <input id="js_EmpPass" type="password" name="" value="">
-                  </div>
-
-                  <div class="input-field col s3">
-                    <label for="js_EmpPhone">Phone Number</label>
-                    <input id="js_EmpPhone" type="text" name="" value="">
                   </div>
 
                   <div class="row">
