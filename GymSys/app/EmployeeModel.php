@@ -54,6 +54,26 @@ class EmployeeModel extends Model
       // Return the  repeats number
       echo $EmpExist;
 
+      { /* Region Create folder To upload Pictures  */
+
+        // Path where Folder Employee will be created
+        $FolderPath="Pictures/Employees/".$EmpName;
+
+        // Validate if the folder exist
+        if ( !file_exists($FolderPath) ) {
+
+          // create folder whit the Employee Name
+          mkdir($FolderPath, 0777, true);
+
+        }else {
+
+          // create folder whit the complete employee Name
+          mkdir($FolderPath."_".$EmpFstName."_".$EmpLstName, 0777, true);
+
+        }
+
+      } /* End Region */
+
       // Build the query. To add new Employee
       DB::table('employees')->insert([
         'Name'=>$EmpName,
