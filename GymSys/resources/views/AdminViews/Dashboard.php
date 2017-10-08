@@ -213,6 +213,9 @@
               </form>
               <!-- End Register Form -->
 
+              <!-- Display Backend data -->
+              <div class="js_EmpResult"></div>
+
             </div>
 
           </div>
