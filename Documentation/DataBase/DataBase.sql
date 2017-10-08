@@ -23,6 +23,7 @@ Email varchar(100) not null,
 password varchar(20) not null,
 Phone varchar(10) not null,
 EmpPhotoPath varchar(100),
+RegisterDate datetime not null,
 EmpRoles_Id int not null,
 
 -- Foreign keys
@@ -37,7 +38,7 @@ Id int not null auto_Increment primary key,
 Name varchar(50) not null,
 FstName varchar(50) not null,
 LstName varchar(50) not null,
-Phone int(10) not null,
+Phone varchar(10) not null,
 Email varchar(100),
 Address varchar(200) not null,
 MemPhotoPath varchar(100),
@@ -52,7 +53,7 @@ Id int not null auto_increment primary key,
 Name varchar(50) not null,
 FstName varchar(50) not null,
 LstName Varchar(50) not null,
-Phone int(10) not null,
+Phone varchar(10) not null,
 Email varchar(100),
 RgsrtDate Datetime default Now()
 
@@ -84,4 +85,8 @@ foreign key (TrainingPackages_Id) references TrainingPackages(Id),
 foreign key (Trainers_Id) references Trainers(Id)
 
 );
+
+-- Drop DataBase
+-- drop database gymsys;
+
 

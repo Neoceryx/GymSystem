@@ -28,9 +28,9 @@ INSERT INTO EmpRoles (Description) values ('Admin'),('Normal');
 select * from EmpRoles;
 
 -- Add new Employee
-INSERT INTO Employees (Name,FstName, LstName, Address, Email, password, Phone ,EmpPhotoPath, EmpRoles_Id)
-VALUES('Daniel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 'd@gmail.com', 'pas' ,6645621957, '', 1),
-('Angel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 'a@gmail.com', 'pas' ,6645621957, '', 2);
+INSERT INTO Employees (Name,FstName, LstName, Address, Email, password, Phone ,EmpPhotoPath, RegisterDate ,EmpRoles_Id)
+VALUES('Daniel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 'd@gmail.com', 'pas' ,'6645621957', '', now() , 1),
+('Angel', 'Fierro', 'Najera' ,'Calle de las minas Fracc Villa del sol', 'a@gmail.com', 'pas' ,'6645621957', '', now() ,2);
 
 select * from employees;
 
@@ -42,7 +42,7 @@ ALTER TABLE employees AUTO_INCREMENT = 1;
 
 -- Add new members
 insert into members (Name,FstName,LstName,Phone,Email,Address,MemPhotoPath,RgstrDate)
-values('daniel', 'Fierro', 'Najera', 159753, 'daniel@gmail.com', 'addrs','', now() );
+values('daniel', 'Fierro', 'Najera', '159753', 'daniel@gmail.com', 'addrs','', now() );
 
 select * from members;
 
@@ -65,3 +65,5 @@ select * from members where (Id=1);
 select employees.Id, Name, FstName, LstName, Address, Email, Phone, EmpPhotoPath, emproles.Description  from employees
 inner join emproles on (employees.EmpRoles_Id = emproles.Id);
 
+-- Get all Employees
+select * from employees;
