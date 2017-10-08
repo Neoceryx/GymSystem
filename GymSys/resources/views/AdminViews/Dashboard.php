@@ -192,22 +192,36 @@
                     <input id="js_EmpLstName" type="text" name="" value="">
                   </div>
 
-                  <div class="input-field col s8">
+                  <div class="input-field col s12">
                     <label for="js_EmpAddrs">Address</label>
                     <input id="js_EmpAddrs" type="text" name="" value="">
                   </div>
 
-                  <div class="input-field col s4">
+                  <div class="input-field col s3">
+                    <label for="js_EmpMail">E-mail</label>
+                    <input id="js_EmpMail" type="text" name="" value="">
+                  </div>
+
+                  <div class="input-field col s3">
+                    <label for="js_EmpPass">Password</label>
+                    <input id="js_EmpPass" type="password" name="" value="">
+                  </div>
+
+                  <div class="input-field col s3">
                     <label for="js_EmpPhone">Phone Number</label>
                     <input id="js_EmpPhone" type="text" name="" value="">
                   </div>
 
-                  <label>Employee Role</label>
-                  <select id="js_EmpRoleId" class="browser-default">
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Normal</option>
-                  </select>
+                  <div class="row">
+                    <div class="col s3">
+
+                      <label>Employee Role</label>
+                      <select id="js_EmpRoleId" class="browser-default">
+                        <option value="" disabled selected>Choose Employee Role</option>
+                      </select>
+
+                    </div>
+                  </div>
 
                 </div>
               </form>
