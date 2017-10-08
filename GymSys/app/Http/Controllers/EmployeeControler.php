@@ -285,12 +285,8 @@ class EmployeeControler extends Controller
       // Get Current DateTime
       $CrrntDate = date('Y-m-d H:i:s');
 
-      // Debugger
-      // echo $EmpName." :: ".$EmpFstName."::".$EmpLstName."::".$EmpAddrs."::".$EmpMail."::".$EmpPass."::".$EmpPhone."::".$EmpRoleId;
-
-
       // Call AddNewEmloyee method from EmployeeModel
-      $NewEmployee=EmployeeModel::AddNewEmployee($EmpName, $EmpFstName, $EmpLstName,$EmpAddrs, $EmpMail, $EmpPass, $EmpPhone, $EmpPicture, $CrrntDate, $EmpRoleId );
+     $NewEmployee=EmployeeModel::AddNewEmployee($EmpName, $EmpFstName, $EmpLstName,$EmpAddrs, $EmpMail, $EmpPass, $EmpPhone, $EmpPicture, $CrrntDate, $EmpRoleId );
 
     }
     // End Function
