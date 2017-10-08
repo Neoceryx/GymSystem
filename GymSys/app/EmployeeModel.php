@@ -33,4 +33,24 @@ class EmployeeModel extends Model
   }
   // End function
 
+  public static function AddNewEmployee($EmpName, $EmpFstName, $EmpLstName,$EmpAddrs, $EmpMail, $EmpPass, $EmpPhone, $EmpPicture, $CrrntDate, $EmpRoleId )
+  {
+
+    // Build the query. To add new Employee
+    DB::table('employees')->insert([
+      'Name'=>$EmpName,
+      'FstName'=>$EmpFstName,
+      'LstName'=>$EmpLstName,
+      'Address'=>$EmpAddrs,
+      'Email'=>$EmpMail,
+      'password'=>$EmpPass,
+      'Phone'=>$EmpPhone,
+      'EmpPhotoPath'=>$EmpPicture,
+      'RegisterDate'=>$CrrntDate,
+      'EmpRoles_Id'=>$EmpRoleId
+      ]);
+
+  }
+  // End function
+
 }
