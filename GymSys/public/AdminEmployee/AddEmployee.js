@@ -9,5 +9,16 @@ $("#js_NewEmp").click(function () {
 });
 // End click
 
+// Save New Employee
+$("#js_RegEmp").click(function () {
+
+  // Get Employe Name
+  var EmpName=$("#js_EmpName").val();
+  
+
+
+});
+// End Click
+
 });
 // End Scope
