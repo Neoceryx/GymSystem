@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+  // Get App token
+  let TOKEN=$("meta[name='csrf-token']").attr('content');
+
 // Open Register Employee Modal
 $("#js_NewEmp").click(function () {
 
@@ -30,6 +33,28 @@ debugger
   // Get Employee Role Id
   var EmpRole=$("#js_EmpRoleId").val();
 
+  // Start.ajax
+  $.ajax({
+    type:"POST",
+    url:"../AddEmployee",
+    data:{ NAME:EmpName },
+    beforeSend: function (request) {
+
+      return request.setRequestHeader('X-CSRF-Token', TOKEN);
+
+    },success:function (data) {
+
+      // Display Bakcend result in the dom
+      $(".js_EmpResult").html(data);
+
+    },error:function (e) {
+
+      alert("An Error Ocurred");
+      $("body").html(e.responseText)
+
+    }
+  });
+  // End Ajax
 
 });
 // End Click
