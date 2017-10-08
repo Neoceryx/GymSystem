@@ -171,9 +171,54 @@
           <div class="modal-content">
             <h4>New Employee Register Modal</h4>
 
+            <div class="row">
+
+              <!-- Start Register Form -->
+              <form class="col s12">
+                <div class="row">
+
+                  <div class="input-field col s4">
+                    <label for="js_EmpName">Name</label>
+                    <input id="js_EmpName" type="text" name="" value="">
+                  </div>
+
+                  <div class="input-field col s4">
+                    <label for="js_EmpFstName">First Name</label>
+                    <input id="js_EmpFstName" type="text" name="" value="">
+                  </div>
+
+                  <div class="input-field col s4">
+                    <label for="js_EmpLstName">Last Name</label>
+                    <input id="js_EmpLstName" type="text" name="" value="">
+                  </div>
+
+                  <div class="input-field col s8">
+                    <label for="js_EmpAddrs">Address</label>
+                    <input id="js_EmpAddrs" type="text" name="" value="">
+                  </div>
+
+                  <div class="input-field col s4">
+                    <label for="js_EmpPhone">Phone Number</label>
+                    <input id="js_EmpPhone" type="text" name="" value="">
+                  </div>
+
+                  <label>Browser Select</label>
+                  <select class="browser-default">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+
+                </div>
+              </form>
+              <!-- End Register Form -->
+
+            </div>
+
           </div>
           <div class="modal-footer">
-            <a href="#!" class="waves-green btn-flat">Register</a>
+            <button id="js_RegEmp" class="waves-effect waves-green btn-flat" type="button" name="button">Register</button>
           </div>
         </div>
         <!-- Start Employee register Modal -->
