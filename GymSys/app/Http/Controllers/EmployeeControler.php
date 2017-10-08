@@ -249,5 +249,17 @@ class EmployeeControler extends Controller
     }
     // End function
 
+
+    public function AddEmployee()
+    {
+
+      // Get Employe Name from Ajax call
+      $EmpName = $_POST["NAME"];
+
+      echo $EmpName;
+
+    }
+    // End Function
+
 }
 // End Class
