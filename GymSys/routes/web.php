@@ -44,6 +44,9 @@ Route::post("MemberInfo", "MembersController@GetMbrById");
 // Add new Employee
 Route::post("AddEmployee", "EmployeeControler@AddEmployee");
 
+// Get Employee Roles
+Route::get("EmpRoles", "EmployeeControler@GetEmployeeRoles");
+
 Route::get("t",function ()
 {
   // Rediret user to login form
