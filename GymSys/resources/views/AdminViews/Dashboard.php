@@ -202,12 +202,11 @@
                     <input id="js_EmpPhone" type="text" name="" value="">
                   </div>
 
-                  <label>Browser Select</label>
-                  <select class="browser-default">
+                  <label>Employee Role</label>
+                  <select id="js_EmpRoleId" class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Normal</option>
                   </select>
 
                 </div>

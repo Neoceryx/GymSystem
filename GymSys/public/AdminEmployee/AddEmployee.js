@@ -14,7 +14,21 @@ $("#js_RegEmp").click(function () {
 
   // Get Employe Name
   var EmpName=$("#js_EmpName").val();
-  
+debugger
+  // Get Employee First Name
+  var EmpFstName = $("#js_EmpFstName").val();
+
+  // Get Employee Last Name
+  var EmpLstName =$("#js_EmpLstName").val();
+
+  // Get Employee Address
+  var EmpAddrss=$("#js_EmpAddrs").val();
+
+  // Get Employee Phone Number
+  var EmpPhone=$("#js_EmpPhone").val();
+
+  // Get Employee Role Id
+  var EmpRole=$("#js_EmpRoleId").val();
 
 
 });
