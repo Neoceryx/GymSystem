@@ -12,7 +12,7 @@ $(document).ready(function () {
       // of an input field. Validation rules are defined
       // on the right side
       debug: true,
-errorClass: "active",
+      errorClass: "active",
       rules:{
 
         jv_MbrName:"required",
