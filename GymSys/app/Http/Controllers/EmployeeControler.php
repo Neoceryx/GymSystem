@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 // Allows use DataBases
 use DB;
 
+// Load Employee Model
+use GymSys\EmployeeModel;
+
 use Illuminate\Support\Facades\Auth;
 
 class EmployeeControler extends Controller
@@ -256,10 +259,58 @@ class EmployeeControler extends Controller
       // Get Employe Name from Ajax call
       $EmpName = $_POST["NAME"];
 
-      echo $EmpName;
+      // Get Emplye Fst Name
+      $EmpFstName=$_POST['FSTNAME'];
+
+      // Get Employee Lst Name
+      $EmpLstName=$_POST['LSTNAME'];
+
+      // Get Emplye Address
+      $EmpAddrs=$_POST['ADDRSS'];
+
+      // Get Employee Email.
+      $EmpMail=$_POST['MAIL'];
+
+      // Get Employe Pass
+      $EmpPass=$_POST['PASS'];
+
+      // Get Employe Phone
+      $EmpPhone=$_POST['PHONE'];
+
+      // Get Employee Role Id
+      $EmpRoleId=$_POST['ROLEID'];
+
+      $EmpPicture="";
+
+      // Get Current DateTime
+      $CrrntDate = date('Y-m-d H:i:s');
+
+      // Debugger
+      // echo $EmpName." :: ".$EmpFstName."::".$EmpLstName."::".$EmpAddrs."::".$EmpMail."::".$EmpPass."::".$EmpPhone."::".$EmpRoleId;
+
+      // Build the query. To add new Employee
+      DB::table('employees')->insert([
+        'Name'=>$EmpName,
+        'FstName'=>$EmpFstName,
+        'LstName'=>$EmpLstName,
+        'Address'=>$EmpAddrs,
+        'Email'=>$EmpMail,
+        'password'=>$EmpPass,
+        'Phone'=>$EmpPhone,
+        'EmpPhotoPath'=>$EmpPicture,
+        'RegisterDate'=>$CrrntDate,
+        'EmpRoles_Id'=>$EmpRoleId
+        ]);
 
     }
     // End Function
+
+    public function GetEmployeeRoles()
+    {
+
+      $post = EmployeeModel::GetEmployeeRoles();
+
+    }
 
 }
 // End Class
