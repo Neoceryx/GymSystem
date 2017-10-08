@@ -288,19 +288,8 @@ class EmployeeControler extends Controller
       // Debugger
       // echo $EmpName." :: ".$EmpFstName."::".$EmpLstName."::".$EmpAddrs."::".$EmpMail."::".$EmpPass."::".$EmpPhone."::".$EmpRoleId;
 
-      // Build the query. To add new Employee
-      DB::table('employees')->insert([
-        'Name'=>$EmpName,
-        'FstName'=>$EmpFstName,
-        'LstName'=>$EmpLstName,
-        'Address'=>$EmpAddrs,
-        'Email'=>$EmpMail,
-        'password'=>$EmpPass,
-        'Phone'=>$EmpPhone,
-        'EmpPhotoPath'=>$EmpPicture,
-        'RegisterDate'=>$CrrntDate,
-        'EmpRoles_Id'=>$EmpRoleId
-        ]);
+      // Call AddNewEmloyee method from EmployeeModel
+      $NewEmployee=EmployeeModel::AddNewEmployee($EmpName, $EmpFstName, $EmpLstName,$EmpAddrs, $EmpMail, $EmpPass, $EmpPhone, $EmpPicture, $CrrntDate, $EmpRoleId );
 
     }
     // End Function
