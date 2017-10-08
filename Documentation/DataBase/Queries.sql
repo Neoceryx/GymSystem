@@ -39,7 +39,6 @@ delete from employees where (Id = 1);
 -- Reset Autoincrement
 ALTER TABLE employees AUTO_INCREMENT = 1;
 
-
 -- Add new members
 insert into members (Name,FstName,LstName,Phone,Email,Address,MemPhotoPath,RgstrDate)
 values('daniel', 'Fierro', 'Najera', '159753', 'daniel@gmail.com', 'addrs','', now() );
