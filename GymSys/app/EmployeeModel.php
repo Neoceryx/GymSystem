@@ -36,21 +36,47 @@ class EmployeeModel extends Model
   public static function AddNewEmployee($EmpName, $EmpFstName, $EmpLstName,$EmpAddrs, $EmpMail, $EmpPass, $EmpPhone, $EmpPicture, $CrrntDate, $EmpRoleId )
   {
 
-    // Build the query. To add new Employee
-    DB::table('employees')->insert([
-      'Name'=>$EmpName,
-      'FstName'=>$EmpFstName,
-      'LstName'=>$EmpLstName,
-      'Address'=>$EmpAddrs,
-      'Email'=>$EmpMail,
-      'password'=>$EmpPass,
-      'Phone'=>$EmpPhone,
-      'EmpPhotoPath'=>$EmpPicture,
-      'RegisterDate'=>$CrrntDate,
-      'EmpRoles_Id'=>$EmpRoleId
-      ]);
+    // Count the times numbers that an new employe apears on the table
+    $EmpExist = DB::table('employees')
+    ->where([
+      ["Name", "like" , "%$EmpName%"],
+      ["FstName", "like" , "%$EmpFstName%"],
+      ["LstName", "like" , "%$EmpLstName%"]
+    ])
+    ->count();
 
-  }
-  // End function
+    //Debugger
+    //dd($EmpExist);
+
+    // Validate if the new employees dont exit.
+    if ( $EmpExist == 0 ) {
+
+      // Return the  repeats number
+      echo $EmpExist;
+
+      // Build the query. To add new Employee
+      DB::table('employees')->insert([
+        'Name'=>$EmpName,
+        'FstName'=>$EmpFstName,
+        'LstName'=>$EmpLstName,
+        'Address'=>$EmpAddrs,
+        'Email'=>$EmpMail,
+        'password'=>$EmpPass,
+        'Phone'=>$EmpPhone,
+        'EmpPhotoPath'=>$EmpPicture,
+        'RegisterDate'=>$CrrntDate,
+        'EmpRoles_Id'=>$EmpRoleId
+        ]);
+
+    }else {
+
+      // Retrun the numbers of apears for teh new employee
+      echo $EmpExist;
+
+    }
+    // End function
+
+    }
+    // End Function
 
 }
