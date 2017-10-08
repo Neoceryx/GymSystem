@@ -288,6 +288,7 @@ class EmployeeControler extends Controller
       // Debugger
       // echo $EmpName." :: ".$EmpFstName."::".$EmpLstName."::".$EmpAddrs."::".$EmpMail."::".$EmpPass."::".$EmpPhone."::".$EmpRoleId;
 
+
       // Call AddNewEmloyee method from EmployeeModel
       $NewEmployee=EmployeeModel::AddNewEmployee($EmpName, $EmpFstName, $EmpLstName,$EmpAddrs, $EmpMail, $EmpPass, $EmpPhone, $EmpPicture, $CrrntDate, $EmpRoleId );
 
@@ -297,6 +298,7 @@ class EmployeeControler extends Controller
     public function GetEmployeeRoles()
     {
 
+      // Get Employee Roles List
       $post = EmployeeModel::GetEmployeeRoles();
 
     }
