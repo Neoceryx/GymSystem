@@ -41,6 +41,9 @@ Route::get("Members","MembersController@GetMembers");
 // Member details Info
 Route::post("MemberInfo", "MembersController@GetMbrById");
 
+// Add new Employee
+Route::post("AddEmployee", "EmployeeControler@AddEmployee");
+
 Route::get("t",function ()
 {
   // Rediret user to login form
