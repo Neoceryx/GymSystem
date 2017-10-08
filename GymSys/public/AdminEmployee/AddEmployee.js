@@ -53,11 +53,24 @@ $("#js_RegEmp").click(function () {
       return request.setRequestHeader('X-CSRF-Token', TOKEN);
 
     },success:function (data) {
-
+      debugger
       // Display Bakcend result in the dom
-      $(".js_EmpResult").html(data);
+      $(".js_EmpResult").html(data).hide();
 
-      alert("Employee was Registered");
+      var EmpExist=parseInt(data);
+
+      // Validate if the new employees is no Registered
+      if (EmpExist == 0 ) {
+
+        // Display Succes Message
+        alert("Employee was Registered");
+
+      }else {
+
+        // Display Waringn Message
+        alert("This eployee all ready is Registered");
+
+      }
 
     },error:function (e) {
 
