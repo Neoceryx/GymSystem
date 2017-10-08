@@ -33,5 +33,4 @@ class EmployeeModel extends Model
   }
   // End function
 
-
 }
