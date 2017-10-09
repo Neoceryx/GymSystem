@@ -129,7 +129,10 @@ class EmployeeModel extends Model
   public static function GetEmployees()
   {
     // Build the query
-     return $Employees=DB::table("employees")->get();
+     return $Employees=DB::table("employees")
+     ->join("emproles","employees.EmpRoles_Id", "=" ,"emproles.Id")
+     ->select("employees.*",'emproles.Description as RoleDesc')
+     ->get();
   }
 
 

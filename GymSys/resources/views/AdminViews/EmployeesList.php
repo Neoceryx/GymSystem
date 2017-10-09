@@ -54,7 +54,7 @@
       <tr>
         <td>$_Employee->Id</td>
         <td>$_Employee->Name</td>
-        <td>$_Employee->FstName</td>        
+        <td>$_Employee->FstName</td>
         <td>$_Employee->LstName</td>
         <td>$_Employee->Address</td>
         <td>$_Employee->Email</td>
@@ -62,7 +62,7 @@
         <td>$_Employee->Phone</td>
         <td>$_Employee->EmpPhotoPath</td>
         <td>$_Employee->RegisterDate</td>
-        <td>$_Employee->EmpRoles_Id</td>
+        <td>$_Employee->RoleDesc</td>
       </tr>
       ";
 
