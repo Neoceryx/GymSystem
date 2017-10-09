@@ -59,16 +59,22 @@ class EmployeeModel extends Model
         // Path where Folder Employee will be created
         $FolderPath="Pictures/Employees/".$EmpName;
 
-        // Validate if the folder exist
+        // // Validate if the folder exist
         if ( !file_exists($FolderPath) ) {
 
           // create folder whit the Employee Name
           mkdir($FolderPath, 0777, true);
 
+          //Store the Folder path into a sesion
+          session()->put('FolderEmp', $FolderPath);
+
         }else {
 
           // create folder whit the complete employee Name
           mkdir($FolderPath."_".$EmpFstName."_".$EmpLstName, 0777, true);
+
+          //Store the Folder path into a sesion
+          session()->put('FolderEmp', $FolderPath."_".$EmpFstName."_".$EmpLstName);
 
         }
 
@@ -83,7 +89,7 @@ class EmployeeModel extends Model
         'Email'=>$EmpMail,
         'password'=>$EmpPass,
         'Phone'=>$EmpPhone,
-        'EmpPhotoPath'=>$EmpPicture,
+        'EmpPhotoPath'=> session()->get('FolderEmp')."/". $EmpPicture,
         'RegisterDate'=>$CrrntDate,
         'EmpRoles_Id'=>$EmpRoleId
         ]);
@@ -94,9 +100,30 @@ class EmployeeModel extends Model
       echo $EmpExist;
 
     }
-    // End function
+    // End Validation
 
     }
     // End Function
+
+  public static function UploadEmpImg()
+    {
+
+      // Validate if the img has errors
+      if ( 0 < $_FILES['file']['error'] ) {
+
+        echo 'Error: ' . $_FILES['file']['error'] . '<br>';
+
+      }
+      else {
+
+        // Upload the Img into the folderPath. Recover from session
+        move_uploaded_file($_FILES['file']['tmp_name'], session()->get('FolderEmp')."/".$_FILES['file']['name']);
+
+      }
+
+      // Destroy session Values
+      session()->forget('FolderEmp');
+
+    }
 
 }

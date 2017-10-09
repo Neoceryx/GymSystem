@@ -60,6 +60,7 @@
     <!-- Start SideBar -->
     <ul id="slide-out" class="side-nav">
       <li><a href="Members" target="_blank">Member List</a></li>
+      <li><a href="#">Employees List </a></li>
     </ul>
     <!-- End SideBar -->
 
@@ -219,6 +220,14 @@
                       <select id="js_EmpRoleId" class="browser-default">
                         <option value="" disabled selected>Choose Employee Role</option>
                       </select>
+
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col s12">
+                      <label for="js_EmpImg">Employee Picture</label><br>
+                      <input id="js_EmpImg" type="file" name="sortpic" />
 
                     </div>
                   </div>

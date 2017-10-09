@@ -38,15 +38,24 @@ $("#js_RegEmp").click(function () {
 
   // Get Employee Role Id
   var EmpRole=$("#js_EmpRoleId").val();
+
+  // Variables to Upload img
+  var file_data = $("#js_EmpImg").prop("files")[0];
   debugger
 
-  // Start.ajax
+  // Get PictureName
+  var ImgName = file_data.name;
+
+  var form_data = new FormData();
+  form_data.append("file", file_data);
+
+  // Start.ajax. Register Info Employee
   $.ajax({
     type:"POST",
     url:"../AddEmployee",
     data:{ NAME:EmpName, FSTNAME:EmpFstName, LSTNAME:EmpLstName,
       ADDRSS:EmpAddrss, MAIL:EmpEmail, PASS:EmpPass,
-      PHONE:EmpPhone, ROLEID:EmpRole
+      PHONE:EmpPhone, IMGNAME:ImgName ,ROLEID:EmpRole
     },
     beforeSend: function (request) {
 
@@ -55,7 +64,7 @@ $("#js_RegEmp").click(function () {
     },success:function (data) {
       debugger
       // Display Bakcend result in the dom
-      $(".js_EmpResult").html(data).hide();
+      $(".js_EmpResult").html(data);
 
       var EmpExist=parseInt(data);
 
@@ -80,6 +89,34 @@ $("#js_RegEmp").click(function () {
     }
   });
   // End Ajax
+
+  // Start ajax. Upload Picture
+  $.ajax({
+    type:"POST",
+    url:"../UploadEmpImg",
+    dataType:'text',
+    cache: false,
+    contentType: false,
+    processData: false,
+    data:form_data,
+    beforeSend: function (request) {
+
+      return request.setRequestHeader('X-CSRF-Token', TOKEN);
+
+    },
+    success:function (data) {
+
+      // Display Bakcend result in the dom
+      $(".js_EmpResult").html(data);
+
+    },
+    error:function (e) {
+
+      alert(" An Error Ocurred ");
+
+    }
+  });
+  // // End ajax
 
 });
 // End Click

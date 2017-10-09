@@ -252,6 +252,14 @@ class EmployeeControler extends Controller
     }
     // End function
 
+    public function GetEmployeeRoles()
+    {
+
+      // Get Employee Roles List
+      $post = EmployeeModel::GetEmployeeRoles();
+
+    }
+    // End Function
 
     public function AddEmployee()
     {
@@ -280,7 +288,8 @@ class EmployeeControler extends Controller
       // Get Employee Role Id
       $EmpRoleId=$_POST['ROLEID'];
 
-      $EmpPicture="";
+      // Get Image Name
+      $EmpPicture=$_POST['IMGNAME'];
 
       // Get Current DateTime
       $CrrntDate = date('Y-m-d H:i:s');
@@ -291,11 +300,11 @@ class EmployeeControler extends Controller
     }
     // End Function
 
-    public function GetEmployeeRoles()
+    public function UploadEmpImg()
     {
 
-      // Get Employee Roles List
-      $post = EmployeeModel::GetEmployeeRoles();
+      // Display the folder employee path
+      $EmpFolderPath=EmployeeModel::UploadEmpImg();
 
     }
 
