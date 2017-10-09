@@ -12,111 +12,141 @@ $("#js_NewEmp").click(function () {
 });
 // End click
 
+
+// Employee register form Validations
+$("#js_EmpRegisterForm").validate({
+
+  debug: true,
+  errorClass: "active invalid",
+  validClass: "valid",
+
+  // The key name on the left side is the name attribute
+  rules:{
+    jv_EmpName:{required: true, minlength: 3},
+    jv_EmpFstName:{required: true, minlength: 3},
+    jv_EmpLstName:{required: true, minlength: 3},
+    jv_EmpPhone:{required: true, number: true, minlength: 5},
+    jv_EmpAddrs:{required: true, minlength: 3},
+    jv_EmpMail:{required: true, minlength: 3, email: true},
+    jv_EmpPass:{required: true, minlength: 4},
+    jv_EmpRoleId:{required: true}
+  }
+
+});
+// End Fields Validations
+
 // Save New Employee
 $("#js_RegEmp").click(function () {
 
-  // Get Employe Name
-  var EmpName=$("#js_EmpName").val();
+  // Call Fields rules validations
+  if ( !$("#js_EmpRegisterForm").valid() ) {
 
-  // Get Employee First Name
-  var EmpFstName = $("#js_EmpFstName").val();
+    // Get Employe Name
+    var EmpName=$("#js_EmpName").val();
 
-  // Get Employee Last Name
-  var EmpLstName =$("#js_EmpLstName").val();
+    // Get Employee First Name
+    var EmpFstName = $("#js_EmpFstName").val();
 
-  // Get Employee Address
-  var EmpAddrss=$("#js_EmpAddrs").val();
+    // Get Employee Last Name
+    var EmpLstName =$("#js_EmpLstName").val();
 
-  // Get Employee Email
-  var EmpEmail=$("#js_EmpMail").val();
+    // Get Employee Address
+    var EmpAddrss=$("#js_EmpAddrs").val();
 
-  // Get Employee password
-  var EmpPass=$("#js_EmpPass").val();
+    // Get Employee Email
+    var EmpEmail=$("#js_EmpMail").val();
 
-  // Get Employee Phone Number
-  var EmpPhone=$("#js_EmpPhone").val();
+    // Get Employee password
+    var EmpPass=$("#js_EmpPass").val();
 
-  // Get Employee Role Id
-  var EmpRole=$("#js_EmpRoleId").val();
+    // Get Employee Phone Number
+    var EmpPhone=$("#js_EmpPhone").val();
 
-  // Variables to Upload img
-  var file_data = $("#js_EmpImg").prop("files")[0];
-  debugger
+    // Get Employee Role Id
+    var EmpRole=$("#js_EmpRoleId").val();
 
-  // Get PictureName
-  var ImgName = file_data.name;
+    // Variables to Upload img
+    var file_data = $("#js_EmpImg").prop("files")[0];
+    debugger
 
-  var form_data = new FormData();
-  form_data.append("file", file_data);
+    // Get PictureName
+    var ImgName = file_data.name;
 
-  // Start.ajax. Register Info Employee
-  $.ajax({
-    type:"POST",
-    url:"../AddEmployee",
-    data:{ NAME:EmpName, FSTNAME:EmpFstName, LSTNAME:EmpLstName,
-      ADDRSS:EmpAddrss, MAIL:EmpEmail, PASS:EmpPass,
-      PHONE:EmpPhone, IMGNAME:ImgName ,ROLEID:EmpRole
-    },
-    beforeSend: function (request) {
+    var form_data = new FormData();
+    form_data.append("file", file_data);
 
-      return request.setRequestHeader('X-CSRF-Token', TOKEN);
+    // Start.ajax. Register Info Employee
+    $.ajax({
+      type:"POST",
+      url:"../AddEmployee",
+      data:{ NAME:EmpName, FSTNAME:EmpFstName, LSTNAME:EmpLstName,
+        ADDRSS:EmpAddrss, MAIL:EmpEmail, PASS:EmpPass,
+        PHONE:EmpPhone, IMGNAME:ImgName ,ROLEID:EmpRole
+      },
+      beforeSend: function (request) {
 
-    },success:function (data) {
-      debugger
-      // Display Bakcend result in the dom
-      $(".js_EmpResult").html(data);
+        return request.setRequestHeader('X-CSRF-Token', TOKEN);
 
-      var EmpExist=parseInt(data);
+      },success:function (data) {
+        debugger
+        // Display Bakcend result in the dom
+        $(".js_EmpResult").html(data);
 
-      // Validate if the new employees is no Registered
-      if (EmpExist == 0 ) {
+        var EmpExist=parseInt(data);
 
-        // Display Succes Message
-        alert("Employee was Registered");
+        // Validate if the new employees is no Registered
+        if (EmpExist == 0 ) {
 
-      }else {
+          // Display Succes Message
+          alert("Employee was Registered");
 
-        // Display Waringn Message
-        alert("This eployee all ready is Registered");
+        }else {
+
+          // Display Waringn Message
+          alert("This eployee all ready is Registered");
+
+        }
+
+      },error:function (e) {
+
+        alert("An Error Ocurred");
+        $("body").html(e.responseText)
 
       }
+    });
+    // End Ajax
 
-    },error:function (e) {
+    // Start ajax. Upload Picture
+    $.ajax({
+      type:"POST",
+      url:"../UploadEmpImg",
+      dataType:'text',
+      cache: false,
+      contentType: false,
+      processData: false,
+      data:form_data,
+      beforeSend: function (request) {
 
-      alert("An Error Ocurred");
-      $("body").html(e.responseText)
+        return request.setRequestHeader('X-CSRF-Token', TOKEN);
 
-    }
-  });
-  // End Ajax
+      },
+      success:function (data) {
 
-  // Start ajax. Upload Picture
-  $.ajax({
-    type:"POST",
-    url:"../UploadEmpImg",
-    dataType:'text',
-    cache: false,
-    contentType: false,
-    processData: false,
-    data:form_data,
-    beforeSend: function (request) {
+        // Display Bakcend result in the dom
+        $(".js_EmpResult").html(data);
 
-      return request.setRequestHeader('X-CSRF-Token', TOKEN);
+      },
+      error:function (e) {
 
-    },
-    success:function (data) {
+        alert(" An Error Ocurred ");
 
-      // Display Bakcend result in the dom
-      $(".js_EmpResult").html(data);
+      }
+    });
+    // // End ajax
 
-    },
-    error:function (e) {
 
-      alert(" An Error Ocurred ");
-
-    }
-  });
-  // // End ajax
+  }
+  // end Form Fields Validations
 
 });
 // End Click

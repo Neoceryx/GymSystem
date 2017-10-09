@@ -175,61 +175,59 @@
             <div class="row">
 
               <!-- Start Register Form -->
-              <form class="col s12">
+              <form id="js_EmpRegisterForm" class="col s12">
                 <div class="row">
 
                   <div class="input-field col s4">
-                    <label for="js_EmpName">Name</label>
-                    <input id="js_EmpName" type="text" name="" value="">
+                    <label for="js_EmpName"></label>
+                    <input id="js_EmpName" placeholder="Name"type="text" name="jv_EmpName" value="">
                   </div>
 
                   <div class="input-field col s4">
-                    <label for="js_EmpFstName">First Name</label>
-                    <input id="js_EmpFstName" type="text" name="" value="">
+                    <label for="js_EmpFstName"></label>
+                    <input id="js_EmpFstName" placeholder="First Name" type="text" name="jv_EmpFstName" value="">
                   </div>
 
                   <div class="input-field col s4">
-                    <label for="js_EmpLstName">Last Name</label>
-                    <input id="js_EmpLstName" type="text" name="" value="">
+                    <label for="js_EmpLstName"></label>
+                    <input id="js_EmpLstName"  placeholder="Last Name" type="text" name="jv_EmpLstName" value="">
                   </div>
 
                   <div class="input-field col s3">
-                    <label for="js_EmpPhone">Phone Number</label>
-                    <input id="js_EmpPhone" type="text" name="" value="">
+                    <label for="js_EmpPhone"></label>
+                    <input id="js_EmpPhone" placeholder="Phone Number" type="text" name="jv_EmpPhone" value="">
                   </div>
 
                   <div class="input-field col s9">
-                    <label for="js_EmpAddrs">Address</label>
-                    <input id="js_EmpAddrs" type="text" name="" value="">
+                    <label for="js_EmpAddrs"></label>
+                    <input id="js_EmpAddrs" placeholder="Address" type="text" name="jv_EmpAddrs" value="">
                   </div>
 
-                  <div class="input-field col s5">
-                    <label for="js_EmpMail">E-mail</label>
-                    <input id="js_EmpMail" type="text" name="" value="">
+                  <div class="input-field col s6">
+                    <label for="js_EmpMail"></label>
+                    <input id="js_EmpMail" placeholder="E-mail" type="text" name="jv_EmpMail" value="">
                   </div>
 
-                  <div class="input-field col s4">
-                    <label for="js_EmpPass">Password</label>
-                    <input id="js_EmpPass" type="password" name="" value="">
+                  <div class="input-field col s6">
+                    <label for="js_EmpPass"></label>
+                    <input id="js_EmpPass" placeholder="Password" type="password" name="jv_EmpPass" value="">
                   </div>
 
                   <div class="row">
-                    <div class="col s3">
+                    <div class="col s6">
 
                       <label>Employee Role</label>
-                      <select id="js_EmpRoleId" class="browser-default">
+                      <select id="js_EmpRoleId" class="browser-default" name="jv_EmpRoleId">
                         <option value="" disabled selected>Choose Employee Role</option>
                       </select>
 
                     </div>
-                  </div>
 
-                  <div class="row">
-                    <div class="col s12">
+                    <div class="col s6">
                       <label for="js_EmpImg">Employee Picture</label><br>
                       <input id="js_EmpImg" type="file" name="sortpic" />
-
                     </div>
+
                   </div>
 
                 </div>
