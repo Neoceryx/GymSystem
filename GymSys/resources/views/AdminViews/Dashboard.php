@@ -60,7 +60,7 @@
     <!-- Start SideBar -->
     <ul id="slide-out" class="side-nav">
       <li><a href="Members" target="_blank">Member List</a></li>
-      <li><a href="#">Employees List </a></li>
+      <li><a href="EmployeesList">Employees List </a></li>
     </ul>
     <!-- End SideBar -->
 

@@ -50,6 +50,8 @@ Route::get("EmpRoles", "EmployeeControler@GetEmployeeRoles");
 // Upload Employee Image
 Route::post("UploadEmpImg", "EmployeeControler@UploadEmpImg");
 
+Route::get("EmployeesList","EmployeeControler@GetAllEmployees");
+
 Route::get("t",function ()
 {
   // Rediret user to login form

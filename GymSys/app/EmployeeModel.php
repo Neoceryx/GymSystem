@@ -126,4 +126,11 @@ class EmployeeModel extends Model
 
     }
 
+  public static function GetEmployees()
+  {
+    // Build the query
+     return $Employees=DB::table("employees")->get();
+  }
+
+
 }

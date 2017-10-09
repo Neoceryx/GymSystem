@@ -307,6 +307,17 @@ class EmployeeControler extends Controller
       $EmpFolderPath=EmployeeModel::UploadEmpImg();
 
     }
+    // End function
+
+    public function GetAllEmployees()
+    {
+
+      $Employees=EmployeeModel::GetEmployees();
+
+      // Return EmployeesList View. whit Assosiative array
+      return view('AdminViews.EmployeesList',['Employees' => $Employees]);
+
+    }
 
 }
 // End Class
